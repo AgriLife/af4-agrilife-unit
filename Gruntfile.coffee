@@ -16,7 +16,7 @@ module.exports = (grunt) ->
         files:
           'css/admin.css':           'css/admin.css'
           'css/agrilife.css':        'css/agrilife.css'
-          'css/home.css':            'css/home.css'
+          'css/com-home.css':        'css/com-home.css'
           'css/af4-style-guide.css': 'css/af4-style-guide.css'
       dev:
         options:
@@ -28,7 +28,7 @@ module.exports = (grunt) ->
         files:
           'css/admin.css':           'css/admin.css'
           'css/agrilife.css':        'css/agrilife.css'
-          'css/home.css':            'css/home.css'
+          'css/com-home.css':        'css/com-home.css'
           'css/af4-style-guide.css': 'css/af4-style-guide.css'
     sass:
       pkg:
@@ -40,7 +40,7 @@ module.exports = (grunt) ->
         files:
           'css/admin.css':           'css/src/admin.scss'
           'css/agrilife.css':        'css/src/agrilife.scss'
-          'css/home.css':            'css/src/home.scss'
+          'css/com-home.css':        'css/src/com-home.scss'
           'css/af4-style-guide.css': 'css/src/af4-style-guide.scss'
       dev:
         options:
@@ -51,7 +51,7 @@ module.exports = (grunt) ->
         files:
           'css/admin.css':           'css/src/admin.scss'
           'css/agrilife.css':        'css/src/agrilife.scss'
-          'css/home.css':            'css/src/home.scss'
+          'css/com-home.css':        'css/src/com-home.scss'
           'css/af4-style-guide.css': 'css/src/af4-style-guide.scss'
     sasslint:
       options:
