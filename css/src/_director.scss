@@ -1,0 +1,253 @@
+$button-padding: 1rem 5rem;
+$button-margin: 0;
+
+.director {
+	$off-page: 10000px;
+
+	color: #FFF;
+	margin: {
+		bottom: 50px;
+		top: 50px;
+	}
+
+	&.with-strategic-plan {
+		margin-bottom: 0;
+	}
+
+	.layout-container {
+		position: relative;
+	}
+
+	.text-column {
+		padding: {
+			bottom: 4%;
+			top: 4%;
+		}
+		position: relative;
+
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			z-index: 2;
+			left: -28px;
+			top: 114px;
+			width: 80px;
+			height: 112px;
+			background: transparent url("../images/quotes-left.png") no-repeat top left {
+				size: 100% auto;
+			}
+		}
+
+		> * {
+			position: relative;
+			z-index: 2;
+		}
+	}
+
+	.photo-column {
+		z-index: 2;
+	}
+
+	.quote {
+		text-align: left;
+		padding-right: 2em;
+	}
+
+	.creds {
+		text-align: right;
+		margin-top: 1em;
+
+		p {
+			font-style: italic;
+			margin: 0;
+			line-height: 1.2em;
+		}
+	}
+
+	.strategic-plan {
+		background-color: $gray-light-medium;
+		padding: 2rem 0;
+		text-align: center;
+
+		.button {
+			@include template-prop($p: background-color, $key: color, $pref-key: button-callout-bg);
+
+			display: inline-block;
+			background-color: $light-green;
+			padding: 10px 50px;
+			text-transform: uppercase;
+			font-weight: bold;
+
+			&, &:hover {
+				text-decoration: none;
+			}
+
+			@media screen and (max-width: 430px){
+				padding: 10px 25px;
+			}
+		}
+	}
+
+	@include breakpoint(390px down){
+		.layout-container {
+			padding: {
+				left: 5%;
+				right: 5%;
+			}
+		}
+
+		.text-column:after {
+			left: -15px;
+			top: 135px;
+			width: 60px;
+		}
+
+		.photo-column {
+			right: 5%;
+		}
+	}
+
+	@include breakpoint(small only){
+		.layout-container {
+			background-color: $dark-blue;
+			padding: {
+				left: $small-side-spacing;
+				right: $small-side-spacing;
+			}
+		}
+
+		.text-column {
+			padding: {
+				bottom: 40px;
+				top: 175px;
+			}
+			font-size: 1.25rem;
+		}
+
+		.photo-column {
+			position: absolute;
+			right: 40px;
+			top: -25px;
+			width: 140px;
+		}
+	}
+
+	@include breakpoint(medium){
+		overflow: hidden;
+		position: relative;
+		z-index: 2;
+
+		.layout-container {
+			@include xy-grid-container($break-xlarge, 0);
+			@include xy-grid;
+
+			align-items: flex-start;
+			justify-content: flex-start;
+			z-index: 2;
+		}
+
+		.text-column,
+		.photo-column {
+			@include xy-cell-base();
+		}
+
+		.text-column {
+			@include xy-cell(9, $gutter-type: padding, $gutters: 3.5rem);
+			margin-top: 10px;
+
+			&::before {
+				content: "";
+				display: block;
+				position: absolute;
+				z-index: 1;
+				background-color: $dark-blue;
+				bottom: 0;
+				left: -1 * $off-page;
+				right: -1 * $off-page;
+				top: 0;
+			}
+
+			&::after {
+				left: 12px;
+				top: 13px;
+				width: 56px;
+
+				@include breakpoint(xlarge down) {
+					left: .8rem;
+					top: 12%;
+					width: 25px;
+				}
+			}
+
+			@include breakpoint(1040px down){
+				padding: {
+					bottom: 2%;
+					right: 1.25rem;
+					top: 2%;
+				}
+
+				&::after {
+					left: 5px;
+					top: 5%;
+					width: 20px;
+				}
+			}
+
+			@include breakpoint(905px down){
+				padding: {
+					bottom: 1%;
+					right: 0;
+					top: 1%;
+				}
+
+				&::after {
+					left: .25rem;
+					top: .25rem;
+					width: 20px;
+				}
+			}
+		}
+
+		.photo-column {
+			@include xy-cell(3, $gutter-type: padding, $gutters: 3.5rem);
+		}
+
+		&.with-strategic-plan .photo-column {
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+
+		.quote {
+			@include breakpoint(1040px down){
+				padding-right: 1.25rem;
+			}
+		}
+
+		@include breakpoint(850px down){
+			.quote {
+				padding-right: 0;
+				line-height: 1.1rem;
+			}
+
+			.creds {
+				margin-top: 0;
+			}
+
+			.text-column {
+				padding: {
+					left: 1rem;
+					right: 0;
+				}
+			}
+
+			.photo-column {
+				padding: {
+					left: 1rem;
+					right: 1rem;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,8 @@
+wp-config.php
+/*.*
+/wp-admin
+/wp-includes
+/wp-content/*.*
+/wp-content/themes
+/wp-content/plugins/*
+!/wp-content/plugins/af4-agrilife-unit

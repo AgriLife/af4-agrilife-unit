@@ -1,0 +1,21 @@
+{
+    "name": "agrilife/af4-agrilife-unit",
+    "description": "Core functionality for AgriLife.org on AgriFlex4",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "Zachary Watkins",
+            "email": "zachary.watkins@ag.tamu.edu"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+    },
+  "require-dev": {
+  },
+    "autoload": {
+        "psr-4": {
+            "Agrilife\\": "src/"
+        }
+    }
+}

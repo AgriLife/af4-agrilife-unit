@@ -1,0 +1,33 @@
+@charset 'utf-8';
+
+$admin: true;
+
+@import 'foundation';
+@import 'settings';
+@import 'mixins';
+@import 'wordpress';
+
+.gutenberg .edit-post-visual-editor {
+	font-family: $body-font-family;
+
+	// Headings
+  h1, .h1,
+  h2, .h2,
+  h3, .h3,
+  h4, .h4,
+  h5, .h5,
+  h6, .h6 {
+    font: {
+      family: $header-font-family;
+      style: $header-font-style;
+      weight: $header-font-weight;
+    }
+    color: $header-color;
+    text-rendering: $header-text-rendering;
+
+    small {
+      line-height: 0;
+      color: $header-small-font-color;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+@function inverse-color-bw($color){
+	$grayscale: grayscale($color);
+	$inverse: invert($grayscale);
+	$lightness: lightness($inverse);
+	$all-or-none: round($lightness / 100) * 100;
+	$color: hsl(0, 0, $all-or-none);
+	@return $color;
+}

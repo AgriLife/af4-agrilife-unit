@@ -1,0 +1,15 @@
+.social-media-footer {
+	background: #58585B;
+	text-align: center;
+	padding: 10px 0;
+
+	.item {
+		display: inline-block;
+		vertical-align: top;
+		margin: 0 6px;
+
+		img {
+			width: 40px;
+		}
+	}
+}

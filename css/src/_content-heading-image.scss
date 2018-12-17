@@ -1,0 +1,71 @@
+.content-heading-image {
+	@include template-prop($p: background-color, $key: header-bg-color);
+	background-color: $dark-blue;
+	position: relative;
+
+	&.flow-arrow {
+		@include template-arrows($border-color: color, $bg-color: header-bg-color);
+
+		&::after {
+			background-color: $dark-blue;
+			z-index: 1;
+		}
+	}
+
+	.wrap {
+		position: relative;
+		z-index: 2;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	h1 {
+		@include absolute-center;
+		@include template-prop($p: color, $key: color, $pref-key: contrast-color);
+		@include template-prop($p: font-size, $key: header-small-font-size);
+
+		background: transparent url("../images/extension-header-title-background.png") no-repeat {
+			size: cover;
+		}
+		color: #FFF;
+		display: inline-block;
+		font: {
+			size: 3.2rem;
+			family: $template-header-font-family;
+		}
+		line-height: 1;
+		margin: 0;
+		padding: rem-calc(25 40);
+		width: auto;
+		max-width: 575px;
+		text-align: center;
+		z-index: 2;
+
+		@include breakpoint(450px down) {
+			font-size: 2.75rem;
+			padding: rem-calc(20 30);
+		}
+
+		div {
+			white-space: nowrap;
+		}
+	}
+
+	@include breakpoint(small only){
+		max-height: 550px;
+	}
+
+	@include breakpoint(medium) {
+		.wrap {
+			overflow: hidden;
+			max-height: 500px;
+		}
+
+		h1 {
+			@include template-prop($p: font-size, $key: header-font-size);
+			padding: rem-calc(30 54 28);
+		}
+	}
+}

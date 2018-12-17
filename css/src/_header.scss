@@ -1,0 +1,225 @@
+// Fix alignment for .title-bar-right
+.title-bar-right {
+	@if $global-flexbox {
+		justify-content: flex-end;
+		align-items: right;
+	}
+}
+
+.no-js #header-search {
+  @include element-invisible;
+}
+
+.site-header,
+#header-search {
+	clear: both;
+}
+
+.site-header {
+	text-align: center;
+	font-family: $header-font-family;
+	font-variant-ligatures: none;
+	letter-spacing: .1em;
+	background: $site-title-background;
+	transition: height .5s;
+	position: relative;
+	z-index: 3;
+
+	.layout-container,
+	.title-area,
+	.title-bar {
+		transition: padding .5s, margin .5s;
+	}
+
+	.site-title img {
+		transition: height .5s;
+	}
+
+	> .wrap {
+		background: $site-title-background;
+	}
+
+	.layout-container {
+		padding: $site-padding;
+		color: $site-title-color;
+	}
+
+	.title-area,
+	.title-bars {
+		display: inline-block;
+	}
+
+	.title-area {
+    width: 50%;
+		font-weight: 700;
+		text-align: left;
+	}
+
+	.site-title {
+		font: {
+			weight: $site-title-font-weight;
+			family: $site-title-font-family;
+			style: normal;
+		}
+		color: #222;
+		text-rendering: optimizelegibility;
+
+		img {
+			width: 168px;
+		}
+	}
+
+	.title-bars {
+    width: 50%;
+    text-align: right;
+  }
+
+	.title-bar {
+		display: inline-block!important;
+	}
+
+	.title-bar-search {
+		border-right: 1px solid $gray-darker;
+
+		.search-icon {
+			display: inline-block;
+			vertical-align: middle;
+			cursor: pointer;
+			position: relative;
+			width: 26px;
+			height: 26px;
+			background: transparent url("../images/search-agrilife-white.png") no-repeat {
+				size: contain;
+			}
+		}
+
+		.title-bar-title {
+			@include element-invisible;
+		}
+	}
+
+	@include breakpoint(small only) {
+
+		#header-search {
+			margin: 1rem;
+		}
+
+		#header-search form {
+			@include xy-grid;
+
+			input[type=search],
+			input[type=submit] {
+				@include xy-cell-base();
+				margin: 0;
+			}
+
+			input[type=search] {
+		    @include xy-cell(8, $gutter-type: margin, $gutters: 0);
+		    border-color: $gray-light;
+			}
+
+			input[type=submit] {
+				@include xy-cell(auto, $gutters: 1rem, $gutter-position: (left));
+			}
+		}
+
+		.is-stuck {
+			.layout-container {
+				padding: {
+					top: rem-calc(10);
+					bottom: rem-calc(10);
+				}
+			}
+
+			.site-title img {
+				max-width: 106px;
+			}
+
+			.title-bar {
+				padding: {
+					top: 0;
+					bottom: 0;
+				}
+			}
+		}
+
+	}
+
+	@include breakpoint(medium) {
+		text-align: left;
+
+		.title-area,
+		.title-bars {
+			margin-bottom: $site-padding;
+		}
+
+		.layout-container {
+			@include xy-grid;
+			max-width: $break-xlarge!important;
+			padding: 2 * $site-padding 0 $site-padding;
+
+			#header-search {
+				@include xy-cell-base();
+				@include xy-cell(3, $gutter-type: padding, $gutters: 2rem);
+			}
+
+			.title-area {
+				@include xy-cell(2, $gutter-type: padding, $gutters: 2rem);
+			}
+		}
+
+		.search-form {
+			text-align: right;
+
+			fieldset {
+				position: relative;
+				border: 0;
+				padding: 0;
+				margin: 0;
+			}
+
+			input[type="search"] {
+				background-color: transparent;
+				display: inline-block;
+				box-sizing: border-box;
+				box-shadow: none;
+				width: calc(100% - 38px);
+				height: 32px;
+				border: 1px solid #D5D6DA {
+					width: 0 0 1px;
+				}
+				padding: 0.1em .3em;
+				margin-bottom: 0;
+				font-style: italic;
+			}
+
+			input[type="submit"] {
+				display: inline-block;
+				box-sizing: border-box;
+				width: 32px;
+				height: 32px;
+				margin-left: 6px;
+				padding: 0;
+				text-indent: 1000rem;
+				border: 0 none;
+				background: transparent url("../images/search-agrilife-light.png") no-repeat {
+					size: contain;
+				}
+			}
+		}
+
+		.is-stuck {
+			.site-title img {
+				width: 152px;
+			}
+
+			.layout-container {
+				padding: $site-padding 0 $site-padding / 2;
+			}
+
+			.title-area {
+				margin-bottom: $site-padding / 2;
+			}
+		}
+	}
+}

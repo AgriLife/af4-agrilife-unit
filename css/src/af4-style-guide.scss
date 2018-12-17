@@ -1,0 +1,23 @@
+@charset 'utf-8';
+
+@import 'agrilife';
+
+.header-font-family {
+	font-family: $header-font-family;
+}
+
+.template-header-font-family {
+	font-family: $template-header-font-family;
+}
+
+.body-font-family {
+	font-family: $body-font-family;
+}
+
+.site-title-font-family {
+	font-family: $site-title-font-family;
+}
+
+.footer-font-family {
+	font-family: $footer-font-family;
+}

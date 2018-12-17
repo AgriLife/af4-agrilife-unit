@@ -1,0 +1,24 @@
+.introduction {
+	&.flow-arrow {
+		@include arrow-color($border-color: $light-green, $bg-color: $body-background);
+		@include template-arrows($border-color: color, $bg-color: $body-background);
+	}
+
+	@include breakpoint(small only){
+		margin: 50px $small-side-spacing 0;
+		padding-bottom: 35px;
+		text-align: center;
+	}
+
+	@include breakpoint(medium){
+		@include xy-grid-container($break-medium + 50px, 0);
+
+		padding: (rem-calc(50px + 20px) + $paragraph-margin-bottom) 25px rem-calc(50px);
+		text-align: center;
+
+		.logo {
+			max-width: 250px;
+		}
+	}
+
+}

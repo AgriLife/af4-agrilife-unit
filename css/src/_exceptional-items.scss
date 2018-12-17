@@ -1,0 +1,110 @@
+.exceptional-items {
+	overflow: hidden;
+	margin: 75px 0;
+
+	h2 {
+		text-transform: uppercase;
+		text-align: center;
+		font-size: 3rem;
+		line-height: 1em;
+		margin-bottom: 50px;
+	}
+
+	.item {
+		padding-bottom: 5%;
+
+		h3,
+		.description {
+			padding: 0 5%;
+			line-height: 1.3;
+		}
+
+		h3 {
+			font-size: 2.5rem;
+			line-height: 2.7rem;
+			margin: {
+				top: 7.5%;
+				bottom: 2.5%;
+			}
+			text-transform: uppercase;
+		}
+	}
+
+	.text {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 0 8%;
+		text-align: center;
+	}
+
+	@include breakpoint(small only){
+		.item {
+			background-color: #F1F1F2;
+			margin-bottom: 50px;
+
+			.description {
+				font-size: 1.25rem;
+			}
+
+			.photo img {
+				width: 100%;
+			}
+		}
+	}
+
+	@include breakpoint(medium){
+		text-align: left;
+
+		.layout-container {
+			@include xy-grid-container($break-large, 0);
+		}
+
+		h2 {
+			font-size: 2.25rem;
+		}
+
+		.row {
+			@include xy-grid;
+
+			justify-content: center;
+
+			.item {
+				@include xy-cell-base();
+				@include xy-cell(auto, $gutter-type: margin, $gutters: 0);
+
+				text-align: left;
+				padding: 1rem 1rem 5%;
+				max-width: 369px;
+				background-color: #F1F1F2;
+				margin: {
+					left: 5%;
+					right: 5%;
+				}
+			}
+
+			.photo {
+				padding: 0 0 4%;
+				position: relative;
+
+				img {
+					position: relative;
+					z-index: 2;
+				}
+			}
+
+			h3,
+			.description {
+				padding: 0 7%;
+			}
+
+			h3 {
+				font-size: 1.85rem;
+				line-height: 1.2;
+			}
+
+			.description {
+				margin-top: 20px;
+			}
+		}
+	}
+}

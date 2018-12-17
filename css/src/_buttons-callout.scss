@@ -1,0 +1,33 @@
+.buttons {
+	background-color: $gray-light-medium;
+	margin-top: 0;
+	padding: 75px 0;
+	text-align: center;
+
+	&.flow-arrow {
+		@include template-arrows(color, $gray-light-medium);
+
+		&::after {
+			background-color: $gray-light-medium;
+			z-index: 1;
+		}
+	}
+
+	a {
+		@include template-prop($p: background-color, $key: color, $pref-key: button-callout-bg);
+
+		display: inline-block;
+		background-color: $light-green;
+		padding: 10px 50px;
+		text-transform: uppercase;
+		font-weight: bold;
+
+		&, &:hover {
+			text-decoration: none;
+		}
+
+		@media screen and (max-width: 430px){
+			padding: 10px 25px;
+		}
+	}
+}

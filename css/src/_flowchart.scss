@@ -1,0 +1,385 @@
+$fc-color: $light-blue !default;
+$fc-bracket-width: 32px !default;
+$fc-sm-space-y: 1.25rem !default;
+$fc-md-space: 4rem !default;
+$prototype-border-width: 1px;
+$prototype-border-type: dashed;
+$prototype-border-color: $fc-color;
+
+@mixin small-item-with-border(){
+	margin: $fc-sm-space-y auto;
+	content: "";
+	display: block;
+}
+
+@mixin border-item {
+	@include bordered(2px);
+	@include small-item-with-border;
+}
+
+.flowchart {
+	background-color: $dark-blue;
+	color: #FFF;
+
+	&.flow-arrow {
+		@include template-arrows($border-color: color, $bg-color: $dark-blue);
+
+		&::after {
+			background-color: $dark-blue;
+		}
+	}
+
+	&.brackets .bottom .item {
+		text-align: center;
+
+		> * {
+			@include brackets($padding: rem-calc(12 24));
+			@include template-brackets($color: color, $pref-color: contrast-color);
+			@include flex;
+
+			flex-flow: row wrap;
+			align-items: center;
+			justify-content: center;
+			margin: 0 auto;
+
+			span:first-child {
+				flex: 0 0 100%;
+				display: inline-block;
+			}
+		}
+	}
+
+	a {
+		color: $whiter;
+
+		&, &:hover {
+			text-decoration: none;
+		}
+	}
+
+	h2 {
+		text-transform: uppercase;
+		font-size: 2.25rem;
+		text-align: center;
+		padding: 0 2rem;
+		margin: 0;
+
+		&::after {
+			@include template-prop($p: border-bottom-color, $key: color);
+
+			content: "";
+			display: block;
+			width: 4rem;
+			margin: .80rem auto 0;
+			border-bottom: {
+				width: 2px;
+				style: solid;
+			}
+		}
+	}
+
+	.bottom a .arrow {
+		$arrow-size: 10;
+		$border-width: 2;
+
+		border: #{$border-width}px solid #FFF;
+		box-sizing: content-box;
+		position: absolute;
+		top: 2px * $border-width;
+		right: 2px * $border-width;
+		width: rem-calc($arrow-size);
+		height: rem-calc($arrow-size);
+
+		&::before,
+		img {
+			position: absolute;
+			right: rem-calc($border-width * -1);
+			top: rem-calc($border-width * -1);
+		}
+
+		&::before {
+			content: "";
+			display: block;
+			background: $dark-blue;
+			width: rem-calc($arrow-size - 1);
+			height: rem-calc($arrow-size - 1);
+			z-index: 1;
+		}
+
+		img {
+			width: rem-calc($arrow-size);
+			height: rem-calc($arrow-size);
+			z-index: 2;
+		}
+	}
+
+	@include breakpoint(small only) {
+		padding: $fc-sm-space-y * 2 0;
+		text-align: center;
+		position: relative;
+
+		.item {
+			max-width: 500px;
+			margin: {
+				left: auto;
+				right: auto;
+			}
+		}
+
+		.flowchart-row {
+			margin: 0 6%;
+		}
+
+		.top .item {
+			width: 50%;
+
+			&.h5 {
+				width: 100%;
+				font-size: 1.75rem;
+			}
+		}
+
+		.bottom .item > * {
+			color: #FFF;
+			font: 1.75rem / 1em $header-font-family;
+			text-transform: uppercase;
+		}
+
+		&:not(.brackets) {
+			.top .item::after {
+				@include border-item;
+
+				width: 1px;
+				height: 30px;
+				border-width: 0 0 0 2px;
+			}
+
+			.bottom .item ~ .item::before {
+				@include border-item;
+
+				width: 60px;
+				height: 1px;
+				border-width: 2px 0 0;
+			}
+		}
+
+		&.brackets {
+			.top .item {
+				margin: {
+					top: $fc-sm-space-y;
+					bottom: $fc-sm-space-y * 2;
+				}
+			}
+
+			.bottom {
+				.item > * {
+					width: 75%;
+					min-width: 252px;
+					height: 68px;
+					margin-bottom: 0;
+					font-size: 1.25rem;
+					line-height: 1.2;
+				}
+
+				.item ~ .item,
+				& + .bottom .item:first-child {
+					@include bordered(2px);
+
+					padding-top: $fc-sm-space-y;
+					border-width: 2px 0 0;
+				}
+
+				.item ~ .item {
+					margin: {
+						top: $fc-sm-space-y;
+						bottom: $fc-sm-space-y;
+					}
+				}
+			}
+		}
+	}
+
+	@include breakpoint(medium) {
+		padding: 50px 0;
+
+		.flowchart-row {
+			text-align: center;
+			margin: 0 8.5%;
+		}
+
+		.text {
+			padding-top: 1.5rem;
+			margin: 0 20%;
+		}
+
+		.top {
+			padding: 50px 0;
+			margin-bottom: 12px;
+			position: relative;
+			overflow: hidden;
+
+			&::before,
+			&::after,
+			.item::after {
+				@include bordered;
+
+				content: "";
+				display: block;
+				position: absolute;
+				z-index: 1;
+			}
+
+			&::before {
+				bottom: -2px;
+				top: 50px;
+				left: 10%;
+				right: 10%;
+			}
+
+			&::after {
+				bottom: -2px;
+				top: 50px + (12px);
+				left: 30%;
+				right: 30%;
+			}
+
+			&.count-3 .item.h5 {
+				width: 40%;
+			}
+
+			.item {
+				@include absolute-center;
+
+				display: inline-table; // Might address fractional positioning of dotted line
+				width: 20%;
+				z-index: 2;
+				background: $dark-blue;
+				padding: 12px;
+
+				@include breakpoint(865px down){
+					width: 25%;
+				}
+
+				&::after {
+					top: calc(100%);
+					left: calc(50% - 1px);
+					width: 1px;
+					height: 64px;
+					border-width: 0 1px 0 0;
+				}
+			}
+
+			.item.h5 {
+				color: #FFF;
+				text-transform: uppercase;
+
+
+			}
+		}
+
+		.bottom {
+			padding-bottom: 32px;
+
+			.item {
+				display: inline-block;
+				vertical-align: top;
+				padding: 0 rem-calc(8);
+			}
+		}
+
+		.item img {
+			max-height: 50px;
+		}
+
+		&:not(.brackets) .bottom .item {
+			width: 20%;
+
+			p {
+				margin-top: 10px;
+			}
+		}
+
+		&.brackets {
+
+			.top.count-3 {
+				&::before {
+					display: none;
+				}
+
+				&::after {
+					left: 22%;
+					right: 22%;
+				}
+			}
+
+			.bottom {
+				@include flex;
+
+				flex-wrap: nowrap;
+				justify-content: center;
+
+				.item {
+					width: 20%;
+
+					& > * {
+						line-height: 1.2;
+						height: 100%;
+					}
+				}
+
+				&.full-row .item {
+					$widths: (19.25%, 21.25%, 19%, 21.25%, 19.25%);
+					$i: 1;
+					@each $width in $widths {
+						&:nth-child(#{$i}){
+							width: #{$width};
+						}
+						$i: $i + 1;
+					}
+				}
+			}
+
+			.bottom.count-3 .item {
+				width: 28%;
+				padding: 0 7%;
+			}
+		}
+	}
+
+	&.brackets {
+		@include breakpoint(1000px down){
+			.text {
+				margin: 0 10%;
+			}
+		}
+
+		.bottom.count-3 .item {
+			@include breakpoint(935px down) {
+				padding: {
+					left: 6%;
+					right: 6%;
+				}
+			}
+
+			@include breakpoint(790px down) {
+				padding: {
+					left: 5%;
+					right: 5%;
+				}
+			}
+		}
+	}
+
+	@include breakpoint(865px down) {
+		.flowchart-row {
+			margin: {
+				left: 5%;
+				right: 5%;
+			}
+		}
+
+		&:not(.brackets) .bottom .item {
+			padding: 0 2%;
+		}
+	}
+}

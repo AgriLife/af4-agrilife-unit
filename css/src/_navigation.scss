@@ -1,0 +1,60 @@
+.menu a:hover {
+	@include menu-state-active;
+}
+
+.site-header {
+
+	.nav-primary {
+		clear: both;
+
+		a,
+		a:hover,
+		li:hover a {
+			color: $site-title-color;
+		}
+	}
+
+	.title-bar.title-bar-navigation {
+		.menu-icon {
+			@include hamburger($color: $titlebar-icon-color, $color-hover: $titlebar-icon-color-hover, $weight: 3px, $width: 30px, $height: 20px);
+			margin: 0;
+		}
+
+		.title-bar-title {
+			padding-left: $titlebar-icon-spacing;
+			cursor: pointer;
+		}
+	}
+
+	@include breakpoint(small only) {
+		.nav-primary #nav-menu-primary {
+			margin: 1rem;
+		}
+	}
+
+	@include breakpoint(medium) {
+		.title-bar,
+		.title-bars,
+		.menu-search-container {
+			@include element-invisible;
+		}
+
+		.nav-primary {
+			@include xy-cell-base();
+			@include xy-cell(auto, $gutter-type: padding, $gutters: 2rem);
+
+			.submenu li {
+				border-left: 2px solid $topbar-submenu-background;
+
+				&:hover {
+					border-left: 2px solid rgb(180, 210, 52);
+				}
+			}
+		}
+	}
+
+	.no-js .nav-primary {
+	  @include element-invisible;
+	}
+
+}
