@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Agrilife.org - AgriFlex4
+ * Plugin Name: AgriLife Unit - AgriFlex4
  * Plugin URI: https://github.com/AgriLife/af4-agrilife-unit
  * Description: Core functionality for AgriLife Unit sites on AgriFlex4
  * Version: 0.1.0
