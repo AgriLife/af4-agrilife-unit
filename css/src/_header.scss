@@ -221,5 +221,39 @@
 				margin-bottom: $site-padding / 2;
 			}
 		}
+
+		.unit-header-wrap {
+			padding-top: 2rem;
+		}
+
+		.unit-header {
+			background-color: $dark-blue;
+			padding: 2rem 3.5rem;
+			color: #FFF;
+
+			.site-title {
+				font: {
+					family: $tungsten;
+					size: 3rem;
+				}
+				line-height: 1;
+				text-transform: uppercase;
+				margin-bottom: 0.25rem;
+			}
+
+			.site-description {
+				font-family: $opensans;
+			}
+
+			a {
+				text-decoration: none;
+				color: #FFF;
+			}
+
+			.wrap {
+				border-left: 2px solid $light-green;
+				padding: 0.5rem 1rem;
+			}
+		}
 	}
 }
