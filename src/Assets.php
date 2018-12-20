@@ -63,10 +63,10 @@ class Assets {
         );
 
         wp_register_style(
-            'agrilife-com-home-styles',
-            ALUAF4_DIR_URL . 'css/com-home.css',
+            'agrilife-com-styles',
+            ALUAF4_DIR_URL . 'css/communications.css',
             array(),
-            filemtime(ALUAF4_DIR_PATH . 'css/com-home.css'),
+            filemtime(ALUAF4_DIR_PATH . 'css/communications.css'),
             'screen'
         );
 
@@ -84,9 +84,7 @@ class Assets {
 
         wp_enqueue_style( 'agrilife-styles' );
 
-        if( is_page_template('communications-home.php') ){
-            wp_enqueue_style( 'agrilife-com-home-styles' );
-        }
+        wp_enqueue_style( 'agrilife-communications-styles' );
 
     }
 

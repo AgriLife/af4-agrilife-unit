@@ -18,3 +18,9 @@ table {
 hr {
 	width: 100%;
 }
+
+.line {
+	width: 7.5%;
+	margin: $paragraph-margin-bottom auto 0;
+	border-top: 2px solid #FFF;
+}

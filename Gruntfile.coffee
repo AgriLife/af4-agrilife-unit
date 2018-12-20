@@ -14,10 +14,10 @@ module.exports = (grunt) ->
           ]
           failOnError: true
         files:
-          'css/admin.css':           'css/admin.css'
-          'css/agrilife.css':        'css/agrilife.css'
-          'css/com-home.css':        'css/com-home.css'
-          'css/af4-style-guide.css': 'css/af4-style-guide.css'
+          'css/admin.css':            'css/admin.css'
+          'css/agrilife.css':         'css/agrilife.css'
+          'css/communications.css':   'css/communications.css'
+          'css/af4u-style-guide.css': 'css/af4u-style-guide.css'
       dev:
         options:
           map: true
@@ -26,10 +26,10 @@ module.exports = (grunt) ->
           ]
           failOnError: true
         files:
-          'css/admin.css':           'css/admin.css'
-          'css/agrilife.css':        'css/agrilife.css'
-          'css/com-home.css':        'css/com-home.css'
-          'css/af4-style-guide.css': 'css/af4-style-guide.css'
+          'css/admin.css':            'css/admin.css'
+          'css/agrilife.css':         'css/agrilife.css'
+          'css/communications.css':   'css/communications.css'
+          'css/af4u-style-guide.css': 'css/af4u-style-guide.css'
     sass:
       pkg:
         options:
@@ -38,10 +38,10 @@ module.exports = (grunt) ->
           style: 'compressed'
           precision: 2
         files:
-          'css/admin.css':           'css/src/admin.scss'
-          'css/agrilife.css':        'css/src/agrilife.scss'
-          'css/com-home.css':        'css/src/com-home.scss'
-          'css/af4-style-guide.css': 'css/src/af4-style-guide.scss'
+          'css/admin.css':            'css/src/admin.scss'
+          'css/agrilife.css':         'css/src/agrilife.scss'
+          'css/communications.css':   'css/src/communications.scss'
+          'css/af4u-style-guide.css': 'css/src/af4u-style-guide.scss'
       dev:
         options:
           loadPath: 'node_modules/foundation-sites/scss'
@@ -49,10 +49,10 @@ module.exports = (grunt) ->
           precision: 2
           trace: true
         files:
-          'css/admin.css':           'css/src/admin.scss'
-          'css/agrilife.css':        'css/src/agrilife.scss'
-          'css/com-home.css':        'css/src/com-home.scss'
-          'css/af4-style-guide.css': 'css/src/af4-style-guide.scss'
+          'css/admin.css':            'css/src/admin.scss'
+          'css/agrilife.css':         'css/src/agrilife.scss'
+          'css/communications.css':   'css/src/communications.scss'
+          'css/af4u-style-guide.css': 'css/src/af4u-style-guide.scss'
     sasslint:
       options:
         configFile: '.sass-lint.yaml'

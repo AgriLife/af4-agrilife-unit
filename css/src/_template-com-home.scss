@@ -1,0 +1,160 @@
+#home-com {
+	h2, h3 {
+		text-transform: uppercase;
+
+		&::after {
+			content: "";
+			display: block;
+			width: 7.5%;
+			border-top: 1px solid $light-green;
+		}
+	}
+
+	h2 {
+		margin-bottom: 3.5rem;
+
+		&::after {
+			margin: 1.5rem auto 0;
+			border-top-width: 2px;
+		}
+	}
+
+	h3 {
+		margin: 0 0 .75rem;
+		&::after {
+			margin: .5rem auto 0;
+		}
+	}
+
+	.service,
+	.agency {
+		color: $whiter;
+		text-align: center;
+
+		a {
+			line-height: 1.2;
+			padding: 0.5rem;
+			text: {
+				decoration: none;
+				transform: uppercase;
+			}
+			font: {
+				family: $tungsten;
+				size: 1.5rem;
+			}
+		}
+	}
+
+	#services {
+		text-align: center;
+		padding: 1rem 0 4.5rem;
+
+		&::after {
+			border-color: $light-green;
+		}
+	}
+
+	.service {
+		background: $maroon-alt;
+
+		.image {
+			max-height: 175px;
+			overflow: hidden;
+		}
+
+		.wrap {
+			padding: 1rem;
+		}
+
+		.line {
+			border-color: $light-green;
+		}
+
+		.description {
+			font-family: $opensans;
+			margin-bottom: $paragraph-margin-bottom;
+			line-height: 1;
+		}
+
+		a {
+			display: block;
+			background-color: $robins-egg-blue;
+			margin: .5rem;
+			color: #000;
+		}
+	}
+
+	#resources {
+		background: $dark-blue;
+		color: $whiter;
+		text-align: center;
+		padding: 5rem 0 4rem;
+	}
+
+	.agency {
+
+		.logo img {
+			height: 45px;
+		}
+
+		.center-line::after {
+			content: "";
+			display: block;
+			width: 1px;
+			margin: 0.5rem auto;
+			height: 1.5rem;
+			border-right: 1px dashed $robins-egg-blue;
+		}
+
+		a {
+			color: $whiter;
+			display: block;
+			padding: 0.5rem 2rem;
+			border: 1px solid $robins-egg-blue;
+		}
+	}
+
+	@include breakpoint(small only){
+		#services {
+			padding: 1rem 1rem 2.5rem;
+		}
+
+		#resources {
+			padding: 4rem 1rem 2.5rem;
+		}
+
+		.service ~ .service {
+			margin-top: 1rem;
+		}
+
+		h2 {
+			margin-bottom: 2.5rem;
+
+			&::after {
+				margin: .75rem auto 0;
+			}
+		}
+
+		.agency {
+			width: 75%;
+			margin: 0 auto;
+
+			& ~ .agency {
+				margin-top: 3rem;
+			}
+		}
+	}
+
+	@include breakpoint(medium){
+		.row {
+			@include xy-grid;
+			justify-content: center;
+		}
+
+		.service,
+		.agency {
+			@include xy-cell-base();
+			@include xy-cell(3, $gutter-type: margin, $gutters: 1.5rem);
+		}
+	}
+}

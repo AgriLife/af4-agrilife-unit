@@ -67,7 +67,7 @@ class Agrilife_Unit {
 
 		// Add custom post type for Exceptional Items
 	  if ( class_exists( 'acf' ) ) {
-	    // require_once(ALUAF4_DIR_PATH . 'fields/exceptional-item-fields.php');
+	    require_once(ALUAF4_DIR_PATH . 'fields/communications-home-fields.php');
 	  }
 
 		if ( get_option( 'af4_agrilife_flush_rewrite_rules_flag' ) ) {
