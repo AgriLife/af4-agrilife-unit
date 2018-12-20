@@ -228,6 +228,11 @@
 
 		.unit-header-wrap {
 			padding-top: 2rem;
+			background: {
+				repeat: no-repeat;
+				position: center top;
+				size: cover;
+			}
 		}
 
 		.unit-header {
