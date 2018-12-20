@@ -143,6 +143,10 @@
 			}
 		}
 
+		.unit-header-wrap {
+			display: none;
+		}
+
 	}
 
 	@include breakpoint(medium) {
