@@ -61,7 +61,7 @@ class Genesis {
 			"{$site_title}{$site_description}"
 		);
 
-		$output = preg_replace('/<\/div>$/', $unit_header . '</div>', $output);
+		$output = preg_replace('/<\/div>$/', '</div>' . $unit_header, $output);
 
 		return $output;
 
