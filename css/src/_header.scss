@@ -25,11 +25,6 @@
 	position: relative;
 	z-index: 3;
 
-	body.custom-header & {
-		background: $site-title-background!important;
-		background-image: none!important;
-	}
-
 	.layout-container,
 	.title-area,
 	.title-bar {
