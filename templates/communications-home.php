@@ -55,7 +55,7 @@ add_action('genesis_entry_content', function(){
 					echo sprintf( '<div class="agency"><div class="logo center-line"><img src="%s" alt="%s"></div><a href="%s" target="%s">%s</a></div>',
 						AF_THEME_DIRURL . "/images/logos/{$agency['name']}-white.png",
 						$agency_nicename[$agency['name']],
-						$agency['button']['ur'],
+						$agency['button']['url'],
 						$agency['button']['target'],
 						$agency['button']['title']
 					);
