@@ -1,0 +1,28 @@
+.blog {
+	h2.entry-title {
+		clear: left;
+	}
+
+	@include breakpoint(50rem) {
+		.post {
+			width: 46%;
+			padding: 2%;
+			margin: 2%;
+		  float: left;
+			background-color: #f0f0f0;
+			position: relative;
+
+			.read-more {
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				margin: 10px 20px;
+			}
+
+			h2 {
+				font-size: 1.4rem;
+				margin-bottom: 1.2rem;
+			}
+		}
+	}
+}
