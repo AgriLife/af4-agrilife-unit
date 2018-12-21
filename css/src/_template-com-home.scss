@@ -47,7 +47,7 @@
 
 	#services {
 		text-align: center;
-		padding: 1rem 0 4.5rem;
+		padding: 1rem 0 3rem;
 
 		&::after {
 			border-color: $light-green;
@@ -88,7 +88,7 @@
 		background: $dark-blue;
 		color: $whiter;
 		text-align: center;
-		padding: 5rem 0 4rem;
+		padding: 5rem 0 2rem;
 	}
 
 	.agency {
@@ -155,6 +155,14 @@
 		.agency {
 			@include xy-cell-base();
 			@include xy-cell(3, $gutter-type: margin, $gutters: 1.5rem);
+		}
+
+		.service {
+			margin-bottom: 1.5rem;
+		}
+
+		.agency {
+			margin-bottom: 3rem;
 		}
 	}
 }

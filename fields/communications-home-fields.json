@@ -105,7 +105,7 @@
                                 "name": "button",
                                 "type": "link",
                                 "instructions": "",
-                                "required": 0,
+                                "required": 1,
                                 "conditional_logic": 0,
                                 "wrapper": {
                                     "width": "",
@@ -208,7 +208,7 @@
                                 "name": "button",
                                 "type": "link",
                                 "instructions": "",
-                                "required": 0,
+                                "required": 1,
                                 "conditional_logic": 0,
                                 "wrapper": {
                                     "width": "",
