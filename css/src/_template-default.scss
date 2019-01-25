@@ -17,6 +17,13 @@
 	.entry-content > p:first-child {
 		margin-top: $paragraph-margin-bottom;
 	}
+
+	.site-inner > .wrap > .content-sidebar-wrap {
+		margin: {
+			left: 2rem;
+			right: 2rem;
+		}
+	}
 }
 
 .page-template-default,
