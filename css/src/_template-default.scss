@@ -13,6 +13,10 @@
 	.site-inner {
 		padding: 0;
 	}
+
+	.entry-content > p:first-child {
+		margin-top: $paragraph-margin-bottom;
+	}
 }
 
 .page-template-default,
