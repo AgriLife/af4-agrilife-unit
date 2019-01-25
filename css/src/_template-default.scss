@@ -10,19 +10,12 @@
 		margin-top: 0;
 	}
 
+	.site-inner > .wrap {
+		max-width: 100%;
+	}
+
 	.site-inner {
 		padding: 0;
-	}
-
-	.entry-content > p:first-child {
-		margin-top: $paragraph-margin-bottom;
-	}
-
-	.site-inner > .wrap > .content-sidebar-wrap {
-		margin: {
-			left: 2rem;
-			right: 2rem;
-		}
 	}
 }
 
@@ -77,10 +70,17 @@
 		text-decoration: none;
 	}
 
-	@include breakpoint(50rem) {
-		.entry-content {
-	    max-width: 50rem;
-	    margin: 0 auto;
+	&.full-width-content .entry-content {
+    max-width: 54rem;
+    margin: 0 auto;
+
+		padding: {
+			left: 1rem;
+			right: 1rem;
+		}
+
+		& > p:first-child {
+			margin-top: $paragraph-margin-bottom;
 		}
 	}
 }

@@ -1,3 +1,17 @@
+.page-template-communications-home .entry-content {
+  max-width: 54rem;
+  margin: 0 auto;
+
+	padding: {
+		left: 2rem;
+		right: 2rem;
+	}
+
+	& > p:first-child {
+		margin-top: $paragraph-margin-bottom;
+	}
+}
+
 #home-com {
 	h2, h3 {
 		text-transform: uppercase;

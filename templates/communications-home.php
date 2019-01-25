@@ -10,7 +10,7 @@ add_action( 'wp_head', function(){
 });
 add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 
-add_action('genesis_entry_content', function(){
+add_action('genesis_after_entry', function(){
 	?><div id="home-com">
 	<div id="services" class="layout-container flow-arrow"><div class="row"><?php
 
