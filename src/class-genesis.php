@@ -65,8 +65,7 @@ class Genesis {
 		$logo = sprintf( '<img src="%s">', AF_THEME_DIRURL . '/images/logo-agrilife.png' );
 
 		$new_inside = sprintf(
-			'<a href="%s" title="Texas A&M AgriLife">%s</a>',
-			trailingslashit( home_url() ),
+			'<a href="https://agrilife.org/" title="Texas A&M AgriLife">%s</a>',
 			$logo
 		);
 
