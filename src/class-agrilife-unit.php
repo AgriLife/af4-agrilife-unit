@@ -66,10 +66,6 @@ class Agrilife_Unit {
 		require_once ALUAF4_DIR_PATH . '/src/class-genesis.php';
 		$ado_genesis = new \Agrilife_Unit\Genesis();
 
-		// Set up required DOM.
-		require_once ALUAF4_DIR_PATH . '/src/class-requireddom.php';
-		$ado_dom = new \Agrilife_Unit\RequiredDOM();
-
 		// Add custom post type for Exceptional Items.
 		if ( class_exists( 'acf' ) ) {
 			require_once ALUAF4_DIR_PATH . 'fields/communications-home-fields.php';
