@@ -47,7 +47,6 @@ module.exports = (grunt) ->
           loadPath: 'node_modules/foundation-sites/scss'
           style: 'expanded'
           precision: 2
-          trace: true
         files:
           'css/admin.css':            'css/src/admin.scss'
           'css/agrilife.css':         'css/src/agrilife.scss'
