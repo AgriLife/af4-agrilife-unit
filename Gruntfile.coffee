@@ -59,7 +59,7 @@ module.exports = (grunt) ->
     compress:
       main:
         options:
-          archive: 'agriflex4.zip'
+          archive: '<%= pkg.name %>.zip'
         files: [
           {src: ['style.css']},
           {src: ['rtl.css']},
