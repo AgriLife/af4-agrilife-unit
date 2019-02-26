@@ -70,13 +70,6 @@ class Assets {
 	public function register_styles() {
 
 		wp_register_style(
-			'agrilife-googlefonts',
-			'https://fonts.googleapis.com/css?family=Oswald|Monoton|Open+Sans',
-			array(),
-			'1.0.0'
-		);
-
-		wp_register_style(
 			'agrilife-styles',
 			ALUAF4_DIR_URL . 'css/agrilife.css',
 			array(),
@@ -102,8 +95,6 @@ class Assets {
 	 * @return void
 	 */
 	public function enqueue_styles() {
-
-		wp_enqueue_style( 'agrilife-googlefonts' );
 
 		wp_enqueue_style( 'agrilife-styles' );
 
