@@ -1,11 +1,11 @@
 {
   "name": "af4-agrilife-unit",
-  "version": "0.2.15",
+  "version": "0.2.16",
   "description": "AgriLife variation of the AgriFlex4 theme",
   "main": "af4-agrilife-unit.php",
   "scripts": {
     "start": "composer install && npm install && grunt",
-    "startpkg": "composer install && npm install && grunt package",
+    "startdev": "composer install && npm install && grunt develop",
     "checkwp": "npm run configphpcs && npm run checkphp",
     "configphpcs": "vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs && vendor/bin/phpcs --config-set ignore_errors_on_exit 1 && vendor/bin/phpcs --config-set ignore_warnings_on_exit 1",
     "checkphp": "vendor/bin/phpcs --standard=WordPress --report=source ./*.php ./src ./templates && vendor/bin/phpcs --standard=WordPress ./*.php ./src ./templates"
