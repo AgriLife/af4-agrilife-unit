@@ -1,4 +1,9 @@
 # AgriLife Unit variation for the AgriFlex4 theme
+A WordPress plugin which provides features for AgriLife Unit sites on the AgriFlex4 theme.
+
+# Requirements
+- AgriFlex4 theme
+- Advanced Custom Fields Pro
 
 # Developers
 - Run "npm start" when installing this repository for the first time.
