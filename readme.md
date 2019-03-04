@@ -10,6 +10,7 @@ A WordPress plugin which provides features for AgriLife Unit sites on the AgriFl
 - Run "grunt" to compile the css when developing the plugin.
 - Run "grunt package" to compile the css when publishing the plugin.
 - Run "grunt watch" to automatically compile the css for development purposes.
+- Run "npm run checkwp" to check php files for compliance with WordPress coding standards
 
 # Developer CLI Requirements
 Ruby and sass are required to compile *.scss files.
