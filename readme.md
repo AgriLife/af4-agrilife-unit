@@ -2,6 +2,11 @@
 
 # Developers
 - Run "npm start" when installing this repository for the first time.
-- Run "grunt develop" to compile the css when developing the plugin.
+- Run "grunt" to compile the css when developing the plugin.
+- Run "grunt package" to compile the css when publishing the plugin.
 - Run "grunt watch" to automatically compile the css for development purposes.
-- Run "grunt" to compile the css when publishing the plugin.
+
+# Developer CLI Requirements
+Ruby and sass are required to compile *.scss files.
+- Ruby >= 2.0.0p648
+- Ruby Sass >= 3.4.22

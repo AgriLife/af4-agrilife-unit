@@ -25,8 +25,6 @@
     "grunt-contrib-sass": "^1.0.0",
     "grunt-postcss": "^0.9.0",
     "jquery": "^3.3.1",
-    "ruby": "^0.6.1",
-    "sass": "^1.17.2",
     "underscore": "^1.9.1",
     "what-input": "^5.1.2"
   },
