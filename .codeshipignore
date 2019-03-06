@@ -50,6 +50,7 @@ bower.json
 config.rb
 node_modules
 vendor
+hooks
 .sass-cache
 *.md
 *.txt
