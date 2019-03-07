@@ -36,9 +36,6 @@ class Genesis {
 			)
 		);
 
-		// Remove header widget area.
-		unregister_sidebar( 'header-right' );
-
 		// Add Unit Header Content.
 		add_filter( 'genesis_structural_wrap-header', array( $this, 'unit_header' ), 999 );
 
