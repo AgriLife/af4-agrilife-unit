@@ -1,18 +1,44 @@
-# AgriLife Unit variation for the AgriFlex4 theme
-A WordPress plugin which provides features for AgriLife Unit sites on the AgriFlex4 theme.
+# AgriLife Unit
+This WordPress plugin provides visual styles and features for AgriLife Unit sites on the AgriFlex4 theme.
 
-# Requirements
-- AgriFlex4 theme
-- Advanced Custom Fields Pro
+## WordPress Requirements
 
-# Developers
-- Run "npm start" when installing this repository for the first time.
-- Run "grunt" to compile the css when developing the plugin.
-- Run "grunt package" to compile the css when publishing the plugin.
-- Run "grunt watch" to automatically compile the css for development purposes.
-- Run "npm run checkwp" to check php files for compliance with WordPress coding standards
+1. Genesis theme
+2. AgriFlex4 theme: [Download the latest release](https://github.com/agrilife/agriflex4/releases/latest)
+3. Advanced Custom Fields Pro plugin
+4. PHP 5.6+, tested with PHP 7.2
 
-# Developer CLI Requirements
-Ruby and sass are required to compile *.scss files.
-- Ruby >= 2.0.0p648
-- Ruby Sass >= 3.4.22
+## Installation
+
+1. [Download the latest release](https://github.com/agrilife/af4-agrilife-org/releases/latest)
+2. Upload the plugin to your site
+
+## Features
+
+* Communications Home page template
+* Visual styles unique to AgriLife Unit websites
+
+## Development Installation
+
+1. Copy this repo to the desired location.
+2. In your terminal, navigate to the plugin location 'cd /path/to/the/plugin'
+3. Run "npm start" to configure your local copy of the repo, install dependencies, and build files
+
+## Development Notes
+
+When you stage changes to this repository and initiate a commit, they must pass PHP and Sass linting tasks before they will complete the commit step. Release tasks can only be used by the repository's owners.
+
+## Development Tasks
+
+1. Run "grunt develop" to compile the css when developing the plugin.
+2. Run "grunt watch" to automatically compile the css after saving a *.scss file.
+3. Run "grunt" to compile the css when publishing the plugin.
+4. Run "npm run checkwp" to check PHP files against WordPress coding standards.
+
+## Development Requirements
+
+* Node: http://nodejs.org/
+* NPM: https://npmjs.org/
+* Ruby: http://www.ruby-lang.org/en/, version >= 2.0.0p648
+* Ruby Gems: http://rubygems.org/
+* Ruby Sass: version >= 3.4.22
