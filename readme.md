@@ -1,4 +1,5 @@
 # AgriLife Unit
+[![Codeship Status for AgriLife/af4-agrilife-unit/master](https://app.codeship.com/projects/577000b0-e6c7-0136-b1a1-368575a5c089/status?branch=master)](https://app.codeship.com/projects/319470)
 This WordPress plugin provides visual styles and features for AgriLife Unit sites on the AgriFlex4 theme.
 
 ## WordPress Requirements
