@@ -38,9 +38,6 @@ class Assets {
 		// Enqueue extension styles.
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 
-		// Dequeue default styles.
-		add_action( 'wp_print_styles', array( $this, 'dequeue_default_styles' ), 5 );
-
 	}
 
 	/**
@@ -99,19 +96,6 @@ class Assets {
 		wp_enqueue_style( 'agrilife-styles' );
 
 		wp_enqueue_style( 'agrilife-communications-styles' );
-
-	}
-
-	/**
-	 * Dequeues global styles
-	 *
-	 * @since 1.0
-	 * @global $wp_styles
-	 * @return void
-	 */
-	public function dequeue_default_styles() {
-
-		wp_dequeue_style( 'agriflex-default-styles' );
 
 	}
 
