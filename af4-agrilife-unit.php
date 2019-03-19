@@ -11,7 +11,7 @@
  * Plugin Name:  AgriLife Unit - AgriFlex4
  * Plugin URI:   https://github.com/AgriLife/af4-agrilife-unit
  * Description:  Core functionality for AgriLife Unit sites on AgriFlex4.
- * Version:      0.2.13
+ * Version:      0.3.3
  * Author:       Zachary Watkins
  * Author URI:   https://github.com/ZachWatkins
  * Author Email: zachary.watkins@ag.tamu.edu
