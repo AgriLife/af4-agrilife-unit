@@ -49,7 +49,7 @@ class PostType {
 	private $search_file = false;
 
 	/**
-	 * Builds and registers the custom taxonomy.
+	 * Builds and registers the custom post type.
 	 *
 	 * @param  array  $name       The post type name.
 	 * @param  string $path       The post template path.
