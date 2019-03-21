@@ -7,7 +7,7 @@ nvm use 6
 # Run WordPress coding standards tasks.
 #
 vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs
-PHPFILES=`git diff --cached --name-only --diff-filter=AM | grep '.php' | tr -d '\n'`
+PHPFILES=`git diff --cached --name-only --diff-filter=AM | grep '.php' | tr '\n' ' '`
 if [[ -z $PHPFILES ]]
 then
 	echo ""
