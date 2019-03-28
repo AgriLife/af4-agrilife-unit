@@ -67,6 +67,10 @@ rules:
   no-trailing-whitespace: 1
   no-vendor-prefixes: 1
   property-sort-order: 0
+  property-units:
+    - 1
+    -
+      per-property: { transition: ['s'] }
   single-line-per-selector: 1
   space-before-brace: 1
   zero-unit: 0
