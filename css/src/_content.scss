@@ -1,22 +1,5 @@
-table {
-	border-collapse: collapse;
-	margin-bottom: $paragraph-margin-bottom;
-
-	&, & td {
-		border: $table-border;
-	}
-
-	td {
-		padding: 0.5rem 0.75rem;
-	}
-}
-
 .flow-arrow {
 	@include arrow;
-}
-
-hr {
-	width: 100%;
 }
 
 .line {
