@@ -14,7 +14,6 @@ module.exports = (grunt) ->
           ]
           failOnError: true
         files:
-          'css/admin.css':            'css/admin.css'
           'css/agrilife.css':         'css/agrilife.css'
           'css/communications.css':   'css/communications.css'
           'css/af4u-style-guide.css': 'css/af4u-style-guide.css'
@@ -26,7 +25,6 @@ module.exports = (grunt) ->
           ]
           failOnError: true
         files:
-          'css/admin.css':            'css/admin.css'
           'css/agrilife.css':         'css/agrilife.css'
           'css/communications.css':   'css/communications.css'
           'css/af4u-style-guide.css': 'css/af4u-style-guide.css'
@@ -38,7 +36,6 @@ module.exports = (grunt) ->
           style: 'compressed'
           precision: 2
         files:
-          'css/admin.css':            'css/src/admin.scss'
           'css/agrilife.css':         'css/src/agrilife.scss'
           'css/communications.css':   'css/src/communications.scss'
           'css/af4u-style-guide.css': 'css/src/af4u-style-guide.scss'
@@ -49,7 +46,6 @@ module.exports = (grunt) ->
           style: 'expanded'
           precision: 2
         files:
-          'css/admin.css':            'css/src/admin.scss'
           'css/agrilife.css':         'css/src/agrilife.scss'
           'css/communications.css':   'css/src/communications.scss'
           'css/af4u-style-guide.css': 'css/src/af4u-style-guide.scss'
