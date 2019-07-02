@@ -1,3 +1,5 @@
+/* Copy from github.com/agrilife/agriflex4/css/src/_settings.scss */
+
 /* Typography
 --------------------------------------------- */
 // $base-font-size: 16px;
@@ -26,9 +28,10 @@ $maroon: #500000;
 $dark-blue: #02233B;
 $light-blue: #27A9E1;
 $light-blue-alt: #1DAFED;
-$robins-egg-blue: #00AEEF;
+$light-blue-3: #A3B2A3;
 $green: #337845;
 $light-green: #B4D234;
+$green-grey: #A3B2A4;
 $purple: #5D0025;
 $beige: #FDE1B4;
 $primary-color: $maroon;
@@ -53,6 +56,7 @@ $body-font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 $paragraph-margin-bottom: 2rem;
 $paragraph-lineheight: 1.35;
 $header-lineheight: 1.1;
+$grid-margin-gutters: 2rem;
 
 /* Header
 --------------------------------------------- */
@@ -114,8 +118,15 @@ $button-background-hover: $dark-blue;
 --------------------------------------------- */
 $footer-background: $site-title-background;
 $footer-text: #F8F8F8;
+$footer-link-active: $light-blue;
 $footer-font-family: $header-font-family;
 $footer-font-weight: 400;
+
+/* END copy from github.com/agrilife/agriflex4/css/src/_settings.scss */
+
+/* Colors
+--------------------------------------------- */
+$robins-egg-blue: #00AEEF;
 
 /* Template Attributes
 --------------------------------------------- */
