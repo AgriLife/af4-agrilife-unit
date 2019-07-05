@@ -68,9 +68,9 @@ class Assets {
 
 		wp_register_style(
 			'agrilife-styles',
-			ALUAF4_DIR_URL . 'css/agrilife.css',
+			ALUAF4_DIR_URL . 'css/agrilife-unit.css',
 			array(),
-			filemtime( ALUAF4_DIR_PATH . 'css/agrilife.css' ),
+			filemtime( ALUAF4_DIR_PATH . 'css/agrilife-unit.css' ),
 			'screen'
 		);
 
