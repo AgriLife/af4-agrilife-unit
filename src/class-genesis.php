@@ -39,9 +39,6 @@ class Genesis {
 		// Add Unit Header Content.
 		add_filter( 'genesis_structural_wrap-header', array( $this, 'unit_header' ), 999 );
 
-		// Add logo and site title for mobile.
-		add_filter( 'af4_header_logo', array( $this, 'genesis_seo_title' ), 11, 3 );
-
 	}
 
 	/**
@@ -72,31 +69,6 @@ class Genesis {
 		$output = preg_replace( '/<\/div>$/', '</div>' . $unit_header, $output );
 
 		return $output;
-
-	}
-
-	/**
-	 * Change site title content.
-	 *
-	 * @since 1.2.0
-	 * @param string $title Genesis SEO title html.
-	 * @param string $inside The inner HTML of the title.
-	 * @param string $wrap The tag name of the seo title wrap element.
-	 * @return string
-	 */
-	public function genesis_seo_title( $title, $inside, $wrap ) {
-
-		// Hide main logo on mobile.
-		$replacement = 'class="show-for-medium agrilife-logo';
-		$title = str_replace( 'class="agrilife-logo', $replacement, $title );
-
-		$mobile_title = sprintf(
-			'<img class="agrilife-mobile-logo custom-logo show-for-small-only" src="http://agriflex4multisite.local/agriflex4/wp-content/uploads/sites/4/2020/01/AgriLife-A.png"><span class="h1 site-title-text hide-for-medium">%s</span>',
-			get_bloginfo( 'name ')
-		);
-		$title = str_replace( '</a>', $mobile_title . '</a>', $title );
-
-		return $title;
 
 	}
 
