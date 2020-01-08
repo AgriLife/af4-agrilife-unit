@@ -91,7 +91,7 @@ class Genesis {
 		$title = str_replace( 'class="agrilife-logo', $replacement, $title );
 
 		$mobile_title = sprintf(
-			'<img class="agrilife-mobile-logo custom-logo show-for-small-only" src="%s/images/AgriLife-A.png"><span class="site-title-text hide-for-medium">%s</span>',
+			'<img class="agrilife-mobile-logo custom-logo show-for-small-only" src="%s/images/AgriLife-A.png"><span class="h1 site-title-text hide-for-medium">%s</span>',
 			ALUAF4_DIR_URL,
 			get_bloginfo( 'name ')
 		);
