@@ -55,6 +55,10 @@
 	.title-bars {
 		padding-left: 0;
 	}
+
+	input[type=search] {
+		color: $black;
+	}
 }
 
 .title-bars.medium-shrink.title-bar-right {
