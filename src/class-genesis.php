@@ -132,7 +132,7 @@ class Genesis {
 	 */
 	public function class_cell_title_area( $attributes ) {
 
-		$attributes['class'] = str_replace( 'small-6 medium-2', 'auto', $attributes['class'] );
+		$attributes['class'] = str_replace( 'small-6 medium-2', 'auto medium-shrink', $attributes['class'] );
 		return $attributes;
 
 	}

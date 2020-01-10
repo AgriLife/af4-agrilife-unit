@@ -56,3 +56,9 @@
 		padding-left: 0;
 	}
 }
+
+.title-bars.medium-shrink.title-bar-right {
+	@include breakpoint(medium) {
+		display: none;
+	}
+}
