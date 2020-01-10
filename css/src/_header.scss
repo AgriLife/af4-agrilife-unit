@@ -1,0 +1,58 @@
+.site-title-text {
+	color: $whiter;
+	display: inline-block;
+	line-height: 1.35;
+	margin: 0;
+	font: {
+		size: 1.125rem;
+		family: $header-font-family;
+		style: normal;
+		weight: 400;
+	}
+}
+
+.agrilife-mobile-logo {
+	border-right: 2px solid $light-green;
+	margin-right: $grid-margin-gutters / 2;
+	padding: {
+		right: $grid-margin-gutters / 2;
+		top: $grid-margin-gutters / 4;
+		bottom: $grid-margin-gutters / 4;
+	}
+}
+
+.site-header {
+	.site-title {
+		> a.grid-x {
+			align-items: center;
+		}
+		.agrilife-mobile-logo {
+			img {
+				width: 28px;
+			}
+		}
+	}
+
+	.nav-primary {
+		#header-search {
+			margin: {
+				left: 0;
+				right: 0;
+				bottom: 0;
+			}
+		}
+
+		.title-bar-search {
+			border-right: none;
+			width: 100%;
+
+			.search-icon {
+				display: none;
+			}
+		}
+	}
+
+	.title-bars {
+		padding-left: 0;
+	}
+}
