@@ -49,7 +49,7 @@ class Genesis {
 		add_filter( 'genesis_structural_wrap-header', array( $this, 'unit_header' ), 999 );
 
 		// Add logo and site title for mobile.
-		add_filter( 'af4_header_logo', array( $this, 'genesis_seo_title' ), 11, 5 );
+		add_filter( 'af4_header_logo', array( $this, 'genesis_seo_title' ), 11, 3 );
 		add_filter( 'genesis_attr_title-area', array( $this, 'class_cell_title_area' ), 11 );
 		add_filter( 'af4_before_nav', array( $this, 'change_menu_toggle' ), 10 );
 		add_filter( 'af4_before_nav', array( $this, 'change_title_bar_cell' ), 10 );
@@ -104,7 +104,7 @@ class Genesis {
 	 * @param string $wrap The tag name of the seo title wrap element.
 	 * @return string
 	 */
-	public function genesis_seo_title( $title, $inside, $wrap, $home, $owrap ) {
+	public function genesis_seo_title( $title, $inside, $wrap ) {
 
 		if ( false !== strpos( $title, '/logo-agrilife.png' ) ) {
 
