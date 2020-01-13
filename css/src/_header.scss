@@ -46,6 +46,12 @@
 			}
 		}
 
+		@include breakpoint(medium) {
+			.title-bars {
+				display: none;
+			}
+		}
+
 		.title-bars .title-bar,
 		.title-bars .title-bar.title-bar-navigation .title-bar-title {
 	    padding: 0;
