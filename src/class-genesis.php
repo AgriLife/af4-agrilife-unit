@@ -56,6 +56,8 @@ class Genesis {
 		remove_filter( 'af4_before_nav', array( $af_required, 'add_search_toggle' ), 11 );
 
 		// Move right header widget area attached to the AgriFlex\RequiredDOM class.
+		add_filter( 'wp_nav_menu_args', array( $this, 'nav_menu_args' ) );
+		add_filter( 'af4_top_bar_left_attr', array( $this, 'af4_top_bar_left_attr' ) );
 		add_filter( 'af4_header_right_attr', array( $this, 'af4_header_right_attr' ) );
 		remove_filter( 'af4_before_nav', array( $af_required, 'add_search_toggle' ), 11 );
 		remove_action( 'genesis_header', array( $af_required, 'add_header_right_widgets' ), 10 );
@@ -208,6 +210,37 @@ class Genesis {
 	 */
 	public function af4_header_right_attr( $attributes ) {
 		$attributes['class'] = 'header-right-widget-area hide-for-medium';
+		return $attributes;
+	}
+
+	/**
+	 * Change class for primary nav menu
+	 *
+	 * @since 1.2.9
+	 * @param array $args Arguments for menu.
+	 * @return array
+	 */
+	public function nav_menu_args( $args ) {
+
+		if ( 'primary' === $args['theme_location'] ) {
+
+			$args['menu_class'] .= ' cell medium-auto';
+
+		}
+
+		return $args;
+
+	}
+
+	/**
+	 * Change attributes for top bar left
+	 *
+	 * @since 1.2.9
+	 * @param array $attributes HTML attributes.
+	 * @return array
+	 */
+	public function af4_top_bar_left_attr( $attributes ) {
+		$attributes['class'] .= ' grid-x grid-padding-x';
 		return $attributes;
 	}
 

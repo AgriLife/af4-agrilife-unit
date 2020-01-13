@@ -1,0 +1,10 @@
+@include breakpoint(medium) {
+	.site-header .nav-primary .title-bar-search .search-icon {
+    height: 2.4rem;
+    display: inline-block;
+	}
+
+	.nav-primary .top-bar {
+		width: 100%;
+	}
+}
