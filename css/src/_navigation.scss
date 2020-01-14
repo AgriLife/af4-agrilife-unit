@@ -4,7 +4,42 @@
     display: inline-block;
 	}
 
-	.nav-primary .top-bar {
-		width: 100%;
+	.nav-primary {
+		.top-bar {
+			width: 100%;
+		}
+
+		.title-bar-search {
+	    position: relative;
+		}
+
+		#header-search {
+	    position: absolute;
+	    top: 100%;
+	    right: -8px;
+	    background-color: $dark-blue;
+	    padding: .5rem;
+	    width: 225px;
+		}
+
+		.search-form input {
+			&[type="search"] {
+		    width: calc(100% - 34px);
+		    margin-right: 8px;
+		    color: $white;
+			}
+
+			&[type="submit"] {
+		    background-position: center;
+		    margin: 0;
+		    cursor: pointer;
+		    width: 26px;
+
+		    &,
+		    &:hover {
+		    	background-image: url("../../../themes/agriflex4/images/search-agrilife-white.svg");
+		    }
+			}
+		}
 	}
 }
