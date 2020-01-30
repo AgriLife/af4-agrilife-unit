@@ -11,16 +11,6 @@
 	}
 }
 
-.agrilife-mobile-logo {
-	border-right: 2px solid $light-green;
-	margin-right: $grid-margin-gutters / 2;
-	padding: {
-		right: $grid-margin-gutters / 2;
-		top: $grid-margin-gutters / 4;
-		bottom: $grid-margin-gutters / 4;
-	}
-}
-
 .site-header {
 	.grid-container .top-bar-left {
     margin: 0;
@@ -29,11 +19,6 @@
 	.site-title {
 		> a.grid-x {
 			align-items: center;
-		}
-		.agrilife-mobile-logo {
-			img {
-				width: 28px;
-			}
 		}
 	}
 
@@ -69,5 +54,21 @@
 .title-bars.medium-shrink.title-bar-right {
 	@include breakpoint(medium) {
 		// display: none;
+	}
+}
+
+@include breakpoint(small only) {
+	.alunit-mobile-logo {
+		border-right: 2px solid $light-green;
+		margin-right: $grid-margin-gutters / 2;
+		padding: {
+			right: $grid-margin-gutters / 2;
+			top: $grid-margin-gutters / 4;
+			bottom: $grid-margin-gutters / 4;
+		}
+
+		img {
+			height: 28px;
+		}
 	}
 }

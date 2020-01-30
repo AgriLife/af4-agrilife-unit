@@ -108,31 +108,55 @@ class Genesis {
 	 */
 	public function genesis_seo_title( $title, $inside, $wrap ) {
 
-		if ( false !== strpos( $title, '/logo-agrilife.png' ) ) {
+		// Get array of images.
+		preg_match_all( '/<img[^>]+>/', $title, $images, PREG_SET_ORDER );
 
-			$mobile_title = sprintf(
-				'<span class="cell shrink agrilife-mobile-logo show-for-small-only"><img src="%simages/AgriLife-A.png"></span><span class="cell auto site-title-text hide-for-medium">%s</span>',
-				ALUAF4_DIR_URL,
-				get_bloginfo( 'name ')
-			);
-			$title = str_replace( '</a>', $mobile_title . '</a>', $title );
-			$title = str_replace( '<a ', '<a class="grid-x" ', $title );
+		// Find out if the user has already chosen their mobile logo.
+		$has_mobile_logo_already = false;
 
-		}
-
-		// Hide main logo on mobile.
-		preg_match_all( '/<img[^>]+>/', $title, $matches, PREG_SET_ORDER );
-		foreach ( $matches as $image ) {
-			if ( false !== strpos( $image[0], '/logo-agrilife.png' ) ) {
-				if ( strpos( $image[0], ' class="' ) ) {
-					$new_main_logo = str_replace( ' class="', ' class="hide-for-small-only', $image[0] );
-				} else {
-					$new_main_logo = str_replace( '<img ', '<img class="hide-for-small-only" ', $image[0] );
+		// Hide existing logo(s) for mobile unless they are a mobile logo already.
+		foreach ( $images as $image ) {
+			$new_image = $image[0];
+			// Get class property.
+			preg_match( '/class="([^"]*)"/', $image[0], $img_class );
+			// Update class property.
+			if ( strpos( $image[0], 'class=' ) && preg_match( '/show-for-small(-only)?/', $img_class[1], $vis_class ) ) {
+				// User-uploaded logo for small or all screens.
+				$has_mobile_logo_already = true;
+				$new_image = '<span class="cell shrink alunit-mobile-logo ' . $vis_class[0] . '">' . $new_image . '</span>';
+				$title = str_replace( $image[0], $new_image, $title );
+				continue;
+			} else {
+				if ( false === empty( $img_class ) && false === strpos( $img_class[1], 'hide-for-small-only' ) && false === strpos( $img_class[1], 'show-for-medium' ) ) {
+					// Image is already hidden on small screens.
+					continue;
 				}
-
-				$title = str_replace( $image[0], $new_main_logo, $title );
+				if ( empty( $img_class ) ) {
+					// Image does not have a class property.
+					$new_image = str_replace( '<img', '<img class="hide-for-small-only"', $new_image );
+				} else {
+					$img_class[1] = 'hide-for-small-only';
+					$new_image = str_replace( $img_class[0], 'class="' . $img_class[1] . '"', $new_image );
+				}
 			}
+			// Replace old image code with new code.
+			$title = str_replace( $image[0], $new_image, $title );
 		}
+
+		// Add new logo and title for mobile.
+		$mobile_title = sprintf(
+			'<span class="cell auto site-title-text show-for-small-only">%s</span>',
+			get_bloginfo( 'name ')
+		);
+		if ( ! $has_mobile_logo_already ) {
+			$mobile_title = sprintf( '<span class="cell shrink alunit-mobile-logo show-for-small-only"><img src="%simages/AgriLife-A.png"></span>', ALUAF4_DIR_URL ) . $mobile_title;
+		}
+		// Remove inline width and height attributes from images.
+		$title = preg_replace( '/ (width|height)="[^"]*"/', '', $title );
+		// Add grid class to anchor tag.
+		$title = str_replace( '<a ', '<a class="grid-x" ', $title );
+		// Add mobile title to the end of the anchor tag.
+		$title = str_replace( '</a>', $mobile_title . '</a>', $title );
 
 		return $title;
 
