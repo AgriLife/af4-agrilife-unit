@@ -66,10 +66,13 @@ class Assets {
 	 */
 	public function register_styles() {
 
+		global $wp_query;
+		$template_name = get_post_meta( $wp_query->post->ID, '_wp_page_template', true );
+
 		wp_register_style(
 			'agrilife-styles',
 			ALUAF4_DIR_URL . 'css/agrilife-unit.css',
-			array(),
+			array( 'agriflex-default-styles' ),
 			filemtime( ALUAF4_DIR_PATH . 'css/agrilife-unit.css' ),
 			'screen'
 		);
@@ -82,6 +85,16 @@ class Assets {
 			'screen'
 		);
 
+		if ( ! $template_name || 'default' === $template_name ) {
+			wp_register_style(
+				'agrilife-default-template-styles',
+				ALUAF4_DIR_URL . 'css/template-default.css',
+				array( 'agrilife-styles' ),
+				filemtime( ALUAF4_DIR_PATH . 'css/template-default.css' ),
+				'screen'
+			);
+		}
+
 	}
 
 	/**
@@ -93,9 +106,16 @@ class Assets {
 	 */
 	public function enqueue_styles() {
 
+		global $wp_query;
+		$template_name = get_post_meta( $wp_query->post->ID, '_wp_page_template', true );
+
 		wp_enqueue_style( 'agrilife-styles' );
 
 		wp_enqueue_style( 'agrilife-communications-styles' );
+
+		if ( ! $template_name || 'default' === $template_name ) {
+			wp_enqueue_style( 'agrilife-default-template-styles' );
+		}
 
 	}
 

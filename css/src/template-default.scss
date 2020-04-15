@@ -1,4 +1,40 @@
 /* Default Page and Post styles */
+@charset 'utf-8';
+
+@import 'foundation';
+@import 'settings';
+
+h1 {
+	@supports (text-decoration-color: map-get($af4-colors, secondary)) {
+		text-decoration-color: map-get($af4-colors, secondary);
+	}
+
+	::after {
+		border-bottom-color: #B4D234;
+	}
+}
+
+h2 {
+	@supports (text-decoration-color: map-get($af4-colors, primary-light)) {
+		text-decoration-color: map-get($af4-colors, primary-light);
+	}
+
+	::after {
+		border-bottom-color: #27A9E1;
+	}
+
+	a {
+		color: #0a0a0a;
+
+		&, &:hover {
+			text-decoration: none;
+		}
+
+		&:hover {
+			color: #500000;
+		}
+	}
+}
 
 .page-template {
 	&.full-width-content .content-sidebar-wrap .content,
@@ -21,43 +57,6 @@
 
 .page-template-default,
 .post-template-default {
-	h1 {
-	  text-align: center;
-	  padding: 1em 0;
-
-	  &:after {
-	    content: "";
-	    display: block;
-	    width: 4rem;
-	    margin: 1.5rem auto 0;
-			border-bottom: 2px solid #B4D234;
-		}
-	}
-
-	h2 {
-		text-align: center;
-		display: inline-block;
-
-		&::after {
-	    content: "";
-	    display: block;
-	    margin: 0.4rem auto 0;
-			border-bottom: 2px solid #27A9E1;
-		}
-
-		a {
-			color: #0a0a0a;
-
-			&, &:hover {
-				text-decoration: none;
-			}
-
-			&:hover {
-				color: #500000;
-			}
-		}
-	}
-
 	.button{
 		display: inline-block;
 	  background-color: #B4D234;

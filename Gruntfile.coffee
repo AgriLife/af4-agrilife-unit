@@ -16,6 +16,7 @@ module.exports = (grunt) ->
           failOnError: true
         files:
           'css/agrilife-unit.css':    'css/agrilife-unit.css'
+          'css/template-default.css': 'css/template-default.css'
           'css/communications.css':   'css/communications.css'
           'css/af4u-style-guide.css': 'css/af4u-style-guide.css'
       dev:
@@ -27,6 +28,7 @@ module.exports = (grunt) ->
           failOnError: true
         files:
           'css/agrilife-unit.css':    'css/agrilife-unit.css'
+          'css/template-default.css': 'css/template-default.css'
           'css/communications.css':   'css/communications.css'
           'css/af4u-style-guide.css': 'css/af4u-style-guide.css'
     sass:
@@ -39,6 +41,7 @@ module.exports = (grunt) ->
           includePaths: ['node_modules/foundation-sites/scss']
         files:
           'css/agrilife-unit.css':    'css/src/agrilife-unit.scss'
+          'css/template-default.css': 'css/src/template-default.scss'
           'css/communications.css':   'css/src/communications.scss'
           'css/af4u-style-guide.css': 'css/src/af4u-style-guide.scss'
       dev:
@@ -50,6 +53,7 @@ module.exports = (grunt) ->
           includePaths: ['node_modules/foundation-sites/scss']
         files:
           'css/agrilife-unit.css':    'css/src/agrilife-unit.scss'
+          'css/template-default.css': 'css/src/template-default.scss'
           'css/communications.css':   'css/src/communications.scss'
           'css/af4u-style-guide.css': 'css/src/af4u-style-guide.scss'
     sasslint:
