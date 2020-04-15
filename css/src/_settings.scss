@@ -6,16 +6,26 @@
 
 /* Breakpoints
 --------------------------------------------- */
+$breakpoints: (
+	small: 0,
+	medium: 640px,
+	medium2: 701px,
+	large: 1024px,
+	xlarge: 1200px,
+	xxlarge: 1440px,
+);
 $break-medium: map-get($breakpoints, medium);
 $break-large: map-get($breakpoints, large);
 $break-xlarge: map-get($breakpoints, xlarge);
+$break-xxlarge: map-get($breakpoints, xlarge);
 $break-medium: map-get($breakpoints, medium);
-$breakpoint-classes: (small medium large xlarge xxlarge);
+$breakpoint-classes: (small medium);
 
 /* Colors
 --------------------------------------------- */
 $white: #F8F8F8; // Because sometimes white isn't always white
 $whiter: #FEFEFE;
+$almost-black: #0A0A0A;
 $gray-darker: #222;
 $gray-dark: #333;
 $gray-medium: #5E564E;
@@ -28,35 +38,55 @@ $maroon: #500000;
 $dark-blue: #02233B;
 $light-blue: #27A9E1;
 $light-blue-alt: #1DAFED;
-$light-blue-3: #A3B2A3;
+$light-blue-alt-2: #1779BA;
+$robins-egg-blue: #00AEEF;
 $green: #337845;
 $light-green: #B4D234;
-$green-grey: #A3B2A4;
 $purple: #5D0025;
 $beige: #FDE1B4;
-$primary-color: $maroon;
+$primary-color: $maroon !default;
+$yellow: #FF0;
+$nav-yellow: #FFE404;
+
+$af4-colors: (
+	primary: $dark-blue,
+	primary-light: $light-blue,
+	secondary: $light-green,
+	anchor: $light-blue-alt-2,
+	footer-anchor-hover: $light-blue,
+	success: #3ADB76,
+	warning: #FFAE00,
+	alert: #CC4B37,
+) !default;
+
+$foundation-palette: $af4-colors;
+
+$primary-color: map-get($foundation-palette, primary);
 
 /* Fonts
 --------------------------------------------- */
-$tungsten: 'Tungsten A', 'Tungsten B', 'Oswald', sans-serif;
-$monoton: 'Monoton', cursive;
-$opensans: 'Open Sans', sans-serif;
+$tungsten: "Tungsten A", "Tungsten B", "Oswald", sans-serif;
+$monoton: "Monoton", cursive;
+$opensans: "Open Sans", sans-serif;
 $header-font-family: $tungsten;
+$header-lineheight: 1.35;
+$header-lineheight-tungsten: .9;
 $template-header-font-family: $monoton;
 $header-color-alt: lighten( $maroon, 12% );
 
 /* Global
 --------------------------------------------- */
-$anchor-color: $primary-color;
-$anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
+$anchor-color: map-get($af4-colors, anchor);
+$anchor-color-hover: scale-color(map-get($af4-colors, anchor), $lightness: -14%);
 $anchor-text-decoration: underline;
 $anchor-text-decoration-hover: underline;
 $site-padding: 1rem;
 $body-font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 $paragraph-margin-bottom: 2rem;
 $paragraph-lineheight: 1.35;
-$header-lineheight: 1.1;
 $grid-margin-gutters: 2rem;
+$grid-padding-gutters: 2rem;
+$padding: $grid-padding-gutters;
 
 /* Header
 --------------------------------------------- */
@@ -66,7 +96,7 @@ $site-title-font-size: 2.75rem;
 $site-title-font-family: "minion-pro", sans-serif;
 $site-description: $gray-dark;
 $site-title-color: $whiter;
-$site-title-background: $dark-blue;
+$site-title-background: map-get($af4-colors, primary);
 
 /* Navigation
 --------------------------------------------- */
@@ -76,7 +106,10 @@ $topbar-submenu-background: lighten($site-title-background, 5%);
 $topbar-input-width: auto;
 $dropdown-menu-item-background-active: $site-title-background;
 $dropdownmenu-arrow-color: $gray-lighter;
-$dropdownmenu-border: none;
+$dropdownmenu-border: 0 none;
+$dropdownmenu-border-width: 0;
+$dropdownmenu-padding-left: 1rem;
+$dropdownmenu-arrow-padding: rem-calc(12) + rem-calc(7) + $dropdownmenu-padding-left;
 $accordion-menu-item-background-active: $site-title-background;
 $accordionmenu-arrow-color: $gray-lighter;
 $nav-item-color: $gray-lighter;
@@ -98,76 +131,66 @@ $titlebar-text-font-weight: normal;
 --------------------------------------------- */
 $small-side-spacing: 9%;
 $blockquote-border: none;
-$blockquote-color: darken($light-blue, 20%);
+$blockquote-color: lighten(
+	desaturate(
+		adjust-hue(
+			map-get($af4-colors, primary), -7
+		), 18.13
+	), 19.80
+) !default;
 $blockquote-padding: rem-calc(9 20 9 19);
 $cite-font-size: 0.9rem;
-$cite-color: darken($light-blue, 20%);
-$hr-border-color: $light-blue;
-$hr-border: 2px dashed $light-blue;
-$table-border-color: $light-blue;
+$cite-color: $blockquote-color;
+$hr-border-color: map-get($af4-colors, primary-light);
+$hr-border: 2px dashed map-get($af4-colors, primary-light);
+$table-border-color: map-get($af4-colors, primary-light);
 $table-border: 1px solid $table-border-color;
 $flow-margin-x: rem-calc(24);
+$header-styles: (
+	small: (
+		"h1": ("font-size": 36),
+		"h2": ("font-size": 30),
+		"h3": ("font-size": 24),
+		"h4": ("font-size": 20),
+		"h5": ("font-size": 18),
+		"h6": ("font-size": 16),
+	),
+	medium: (
+		"h1": ("font-size": 48),
+		"h2": ("font-size": 40),
+		"h3": ("font-size": 31),
+		"h4": ("font-size": 25),
+		"h5": ("font-size": 20),
+		"h6": ("font-size": 16),
+	),
+);
+$header-styles-tungsten: (
+	small: (
+		"h1": ("font-size": 39),
+		"h2": ("font-size": 32),
+		"h3": ("font-size": 26),
+		"h4": ("font-size": 22),
+		"h5": ("font-size": 19),
+		"h6": ("font-size": 18),
+	),
+	medium: (
+		"h1": ("font-size": 52),
+		"h2": ("font-size": 44),
+		"h3": ("font-size": 33),
+		"h4": ("font-size": 27),
+		"h5": ("font-size": 22),
+		"h6": ("font-size": 19),
+	),
+);
 
 /* Buttons
 --------------------------------------------- */
 $button-radius: 2rem;
-$button-background: $light-blue;
-$button-background-hover: $dark-blue;
+$button-background: map-get($af4-colors, primary-light);
+$button-background-hover: map-get($af4-colors, primary);
+$button-red-highlight: #FD0020;
 
 /* Footer
 --------------------------------------------- */
-$footer-background: $site-title-background;
-$footer-text: #F8F8F8;
-$footer-link-active: $light-blue;
 $footer-font-family: $header-font-family;
 $footer-font-weight: 400;
-
-/* END copy from github.com/agrilife/agriflex4/css/src/_settings.scss */
-
-/* Colors
---------------------------------------------- */
-$robins-egg-blue: #00AEEF;
-
-/* Template Attributes
---------------------------------------------- */
-$template-atts: (
-	research: (
-		color: $light-green,
-		header-bg-color: $green,
-		text-color: #FFF,
-		button-text-color: $anchor-color,
-		button-hover: lighten($light-green, 10%)
-	),
-	coals: (
-		color: #B1B4B6,
-		header-bg-color: $maroon-alt,
-		header-font-size: 2.9rem,
-		header-small-font-size: 2rem,
-		button-callout-bg: #FFF,
-		text-color: #FFF,
-		button: $maroon-alt,
-		button-text-color: $whiter,
-		button-hover: lighten($maroon-alt, 10%)
-	),
-	tvmdl: (
-		color: $beige,
-		header-bg-color: darken($beige, 60%),
-		text-color: #000,
-		button-text-color: $anchor-color,
-		button-hover: lighten($beige, 10%)
-	),
-	forest: (
-		color: $light-green,
-		header-bg-color: $green,
-		text-color: #000,
-		button-text-color: $anchor-color,
-		button-hover: lighten($light-green, 10%)
-	),
-	extension: (
-		color: $light-blue,
-		header-bg-color: $dark-blue,
-		text-color: #000,
-		button-text-color: $anchor-color,
-		button-hover: lighten($light-blue, 10%)
-	)
-);
