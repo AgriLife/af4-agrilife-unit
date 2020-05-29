@@ -11,9 +11,13 @@
 	}
 }
 
+.site-title a {
+	text-decoration: none;
+}
+
 .site-header {
 	.grid-container .top-bar-left {
-    margin: 0;
+		margin: 0;
 	}
 
 	.site-title {
@@ -33,7 +37,7 @@
 
 		.title-bars .title-bar,
 		.title-bars .title-bar.title-bar-navigation .title-bar-title {
-	    padding: 0;
+			padding: 0;
 		}
 
 		.title-bar-search {
@@ -48,12 +52,6 @@
 
 	input[type=search] {
 		color: $black;
-	}
-}
-
-.title-bars.medium-shrink.title-bar-right {
-	@include breakpoint(medium) {
-		// display: none;
 	}
 }
 
