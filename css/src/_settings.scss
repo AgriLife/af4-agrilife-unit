@@ -65,12 +65,11 @@ $primary-color: map-get($foundation-palette, primary);
 
 /* Fonts
 --------------------------------------------- */
-$tungsten: "Tungsten A", "Tungsten B", "Oswald", sans-serif;
+$tamu-header-font: "Oswald", sans-serif;
 $monoton: "Monoton", cursive;
 $opensans: "Open Sans", sans-serif;
-$header-font-family: $tungsten;
+$header-font-family: $tamu-header-font;
 $header-lineheight: 1.35;
-$header-lineheight-tungsten: .9;
 $template-header-font-family: $monoton;
 $header-color-alt: lighten( $maroon, 12% );
 
@@ -162,24 +161,6 @@ $header-styles: (
 		"h4": ("font-size": 25),
 		"h5": ("font-size": 20),
 		"h6": ("font-size": 16),
-	),
-);
-$header-styles-tungsten: (
-	small: (
-		"h1": ("font-size": 39),
-		"h2": ("font-size": 32),
-		"h3": ("font-size": 26),
-		"h4": ("font-size": 22),
-		"h5": ("font-size": 19),
-		"h6": ("font-size": 18),
-	),
-	medium: (
-		"h1": ("font-size": 52),
-		"h2": ("font-size": 44),
-		"h3": ("font-size": 33),
-		"h4": ("font-size": 27),
-		"h5": ("font-size": 22),
-		"h6": ("font-size": 19),
 	),
 );
 

@@ -1,6 +1,6 @@
 .page-template-communications-home .entry-content {
-  max-width: 54rem;
-  margin: 0 auto;
+	max-width: 54rem;
+	margin: 0 auto;
 
 	padding: {
 		left: 2rem;
@@ -13,7 +13,8 @@
 }
 
 #home-com {
-	h2, h3 {
+	h2,
+	h3 {
 		text-transform: uppercase;
 
 		&::after {
@@ -35,6 +36,7 @@
 
 	h3 {
 		margin: 0 0 .75rem;
+
 		&::after {
 			margin: .5rem auto 0;
 		}
@@ -53,7 +55,7 @@
 				transform: uppercase;
 			}
 			font: {
-				family: $tungsten;
+				family: $tamu-header-font;
 				size: 1.5rem;
 			}
 		}
@@ -128,7 +130,7 @@
 		}
 	}
 
-	@include breakpoint(small only){
+	@include breakpoint(small only) {
 		#services {
 			padding: 1rem 1rem 2.5rem;
 		}
@@ -159,7 +161,7 @@
 		}
 	}
 
-	@include breakpoint(medium){
+	@include breakpoint(medium) {
 		.row {
 			@include xy-grid;
 			justify-content: center;
