@@ -109,6 +109,9 @@ class Agrilife_Unit {
 		$com_home = new \Agrilife_Unit\PageTemplate( ALUAF4_TEMPLATE_PATH, 'communications-home.php', 'Communications - Home' );
 		$com_home->register();
 
+		$template_service = new \Agrilife_Unit\PageTemplate( ALUAF4_TEMPLATE_PATH, 'service-landing-page.php', 'Service Landing Page' );
+		$template_service->register();
+
 	}
 
 	/**
