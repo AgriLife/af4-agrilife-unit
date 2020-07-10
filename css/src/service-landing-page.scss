@@ -1,0 +1,252 @@
+@import "foundation";
+@import "settings-af4";
+@import "util/extends";
+@import "util/mixins";
+
+h1 {
+	@extend %h1;
+}
+
+h2 {
+	@extend %h2;
+}
+
+.page-template-service-landing-page {
+	.entry {
+		margin-top: 2%;
+		margin-bottom: 2%;
+	}
+
+	.entry-content {
+		max-width: 54rem;
+		margin: 0 auto;
+		padding: {
+			left: 2rem;
+			right: 2rem;
+		}
+
+		& > p:first-child {
+			margin-top: $paragraph-margin-bottom;
+		}
+	}
+}
+
+.service-landing {
+	h2,
+	h3 {
+		text-transform: uppercase;
+
+		&.underline::after {
+			content: "";
+			display: block;
+			width: 7.5%;
+			border-top: 1px solid $whiter;
+		}
+
+		&.underline-lightgreen::after {
+			border-top-color: $light-green;
+		}
+
+		&.underline-lightblue::after {
+			border-top-color: $light-blue;
+		}
+	}
+
+	h2 {
+		margin-bottom: 3.5rem;
+
+		&.underline::after {
+			margin: 1.5rem auto 0;
+			border-top-width: 2px;
+		}
+	}
+
+	h3 {
+		margin: 0 0 .6rem;
+
+		&.underline::after {
+			margin: .5rem auto 0;
+		}
+	}
+
+	a.item-button {
+		display: block;
+	}
+
+	.item-section {
+		padding: 5rem 0 3rem;
+		text-align: center;
+
+		&:first-child {
+			padding-top: 1rem;
+		}
+
+		&.flow-arrow-bdr-lightgreen::after {
+			border-color: $light-green;
+		}
+
+		&.flow-arrow-bdr-lightblue::after {
+			border-color: $light-blue;
+		}
+
+		&.bg-darkblue {
+			background: $dark-blue;
+			color: $whiter;
+
+			a {
+				color: $whiter;
+			}
+		}
+	}
+
+	.cell {
+		text-align: center;
+
+		a.item-button {
+			line-height: 1.2;
+			padding: 0.5rem;
+			text: {
+				decoration: none;
+				transform: uppercase;
+			}
+			font: {
+				family: $tamu-header-font;
+				size: 1.5rem;
+			}
+			color: $black;
+		}
+	}
+
+	.card {
+		.image {
+			max-height: 175px;
+			overflow: hidden;
+		}
+
+		.wrap {
+			padding: 1rem;
+		}
+
+		.description {
+			font-family: $opensans;
+			margin-bottom: 1.8rem;
+			line-height: 1;
+
+			p {
+				margin-bottom: .65rem;
+			}
+		}
+
+		a.item-button {
+			margin: .5rem;
+		}
+	}
+
+	.flowchart-item {
+
+		img.logo {
+			height: 45px;
+		}
+
+		.center-line::after {
+			content: "";
+			display: block;
+			width: 1px;
+			margin: .5rem auto;
+			height: 1.5rem;
+			border-right: 1px dashed #000;
+		}
+
+		a.item-button {
+			padding: .5rem 2rem;
+			border: 1px solid #000;
+		}
+
+		.center-line.line-lightgreen {
+			&::after,
+			& ~ .item-button {
+				border-color: $light-green;
+			}
+		}
+
+		.center-line.line-lightblue {
+			&::after,
+			& ~ .item-button {
+				border-color: $light-blue;
+			}
+		}
+	}
+
+	@include breakpoint(small only) {
+		.item-section {
+			padding: 4rem 1rem 2.5rem;
+
+			&:first-child {
+				padding-top: 1rem;
+			}
+		}
+
+		.cell ~ .cell {
+			margin-top: 1rem;
+		}
+
+		h2 {
+			margin-bottom: 2.5rem;
+
+			&.underline::after {
+				margin: .75rem auto 0;
+			}
+		}
+
+		.flowchart-item {
+			width: 75%;
+			margin: 0 auto;
+
+			& ~ .flowchart-item {
+				margin-top: 3rem;
+			}
+		}
+	}
+
+	@include breakpoint(medium) {
+		.cells {
+			@include xy-grid;
+
+			&.center {
+				justify-content: center;
+			}
+
+			&.right {
+				justify-content: right;
+			}
+		}
+
+		.columns .cell {
+			@include xy-cell-base();
+		}
+
+		.columns-4 .cell {
+			@include xy-cell(3, $gutter-type: margin, $gutters: 1.5rem);
+		}
+
+		.columns-3 .cell {
+			@include xy-cell(4, $gutter-type: margin, $gutters: 1.5rem);
+		}
+
+		.columns-2 .cell {
+			@include xy-cell(6, $gutter-type: margin, $gutters: 1.5rem);
+		}
+
+		.card {
+			margin-bottom: 1.5rem;
+		}
+
+		.flowchart-item {
+			margin-bottom: 3rem;
+		}
+	}
+
+	.flow-arrow {
+		@include arrow;
+	}
+}
