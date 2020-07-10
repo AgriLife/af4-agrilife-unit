@@ -53,9 +53,9 @@ function af4_service_register_styles() {
 
 	wp_register_style(
 		'agriflex-service-lp-styles',
-		AF_THEME_DIRURL . '/css/service-landing-page.css',
+		ALUAF4_DIR_URL . 'css/service-landing-page.css',
 		array(),
-		filemtime( AF_THEME_DIRPATH . '/css/service-landing-page.css' ),
+		filemtime( ALUAF4_DIR_PATH . 'css/service-landing-page.css' ),
 		'screen'
 	);
 
