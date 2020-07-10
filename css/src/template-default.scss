@@ -1,8 +1,8 @@
 /* Default Page and Post styles */
-@charset 'utf-8';
+@charset "utf-8";
 
-@import 'foundation';
-@import 'settings';
+@import "foundation";
+@import "settings-af4";
 
 h1 {
 	@supports (text-decoration-color: map-get($af4-colors, secondary)) {
@@ -24,9 +24,10 @@ h2 {
 	}
 
 	a {
-		color: #0a0a0a;
+		color: #0A0A0A;
 
-		&, &:hover {
+		&,
+		&:hover {
 			text-decoration: none;
 		}
 
@@ -57,12 +58,12 @@ h2 {
 
 .page-template-default,
 .post-template-default {
-	.button{
+	.button {
 		display: inline-block;
-	  background-color: #B4D234;
-	  padding: 10px 50px;
-	  text-transform: uppercase;
-	  font-weight: bold;
+		background-color: #B4D234;
+		padding: 10px 50px;
+		text-transform: uppercase;
+		font-weight: bold;
 	}
 
 	a.button {
@@ -70,8 +71,8 @@ h2 {
 	}
 
 	&.full-width-content .entry-content {
-    max-width: 54rem;
-    margin: 0 auto;
+		max-width: 54rem;
+		margin: 0 auto;
 
 		padding: {
 			left: 1rem;
