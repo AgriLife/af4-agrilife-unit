@@ -1,0 +1,143 @@
+%h1 {
+	text-align: center;
+	padding: 1em 0;
+
+	&::after {
+		content: "";
+		display: block;
+		width: 4rem;
+		margin: 1.5rem auto 0;
+		border-bottom: {
+			width: 2px;
+			style: solid;
+		}
+	}
+
+	@supports (text-decoration-color: map-get($af4-colors, secondary)) {
+		padding-bottom: 1.15em;
+		text-underline-position: under;
+		text-decoration: {
+			style: solid;
+			line: underline;
+		}
+		display: block;
+
+		&::after {
+			display: none;
+		}
+	}
+}
+
+%h2 {
+	text-align: center;
+
+	&::after {
+		content: "";
+		display: block;
+		margin: 0.4rem auto 0;
+		border-bottom: {
+			width: 2px;
+			style: solid;
+		}
+	}
+
+	@supports (text-decoration-color: map-get($af4-colors, primary-light)) {
+		padding-bottom: 0.15em;
+		text-underline-position: under;
+		text-decoration: {
+			style: solid;
+			line: underline;
+		}
+		display: block;
+
+		&::after {
+			display: none;
+		}
+	}
+
+	a {
+		color: $almost-black;
+
+		&,
+		&:hover {
+			text-decoration: none;
+		}
+
+		&:hover {
+			color: $maroon;
+		}
+	}
+}
+
+%button {
+	display: inline-block;
+	background-color: $button-background;
+	padding: 10px 50px;
+	text-transform: uppercase;
+	font-weight: bold;
+	cursor: pointer;
+
+	@at-root a.button {
+		text-decoration: none;
+	}
+
+	&.button-radius {
+		border-radius: $button-radius;
+	}
+}
+
+%button-compact {
+	font: 900 .75rem/1rem $opensans;
+	display: inline-block;
+	padding: 0.4rem .8rem;
+	color: $white;
+	border: 1px solid lighten(map-get($af4-colors, primary), 50%);
+	margin: {
+		bottom: 1rem;
+		right: 1rem;
+	}
+	background-color: map-get($af4-colors, primary);
+	text: {
+		transform: uppercase;
+	}
+
+	&:last-of-type {
+		margin-right: 0;
+	}
+
+	&:hover,
+	&:focus {
+		color: $white;
+	}
+
+	&.hollow {
+		color: map-get($af4-colors, primary);
+		border-color: map-get($af4-colors, primary);
+		background-color: $white;
+
+		&::hover {
+			color: map-get($af4-colors, primary);
+		}
+	}
+
+	a {
+		color: $white;
+	}
+}
+
+%arrow-right {
+	&::after {
+		content: "";
+		display: inline-block;
+		width: 1.1rem;
+		height: 1.1rem;
+		margin-left: .3em;
+		border: 4px solid $nav-yellow {
+			width: 0 4px 4px 0;
+		}
+		position: relative;
+		top: -.2rem;
+		left: -.2rem;
+		transform: rotate(-45deg);
+	}
+}

@@ -1,0 +1,124 @@
+/// Arrow base styles
+///
+/// @param {Number} $z-index [2] - z-index value
+@mixin arrow-base ($z-index: 2) {
+	position: relative;
+
+	&::after {
+		content: "";
+		display: block;
+		width: 40px;
+		height: 40px;
+		border-style: solid;
+		border-width: 0 0 2px 2px;
+		transform: translate(-50%, 30%) rotate(-45deg);
+		position: absolute;
+		bottom: 0;
+		left: calc(50% - 2px);
+		z-index: $z-index;
+	}
+}
+
+/// Arrow color styles
+///
+/// @param {Color} $border-color [map-get($af4-colors, primary-light)] - CSS color value
+/// @param {Color} $bg-color [#FFF] - CSS color value
+@mixin arrow-color(
+	$border-color: map-get($af4-colors, primary-light),
+	$bg-color: $whiter
+) {
+	&::after {
+		border-color: $border-color;
+		background-color: $bg-color;
+	}
+}
+
+/// Create an arrow below the current element
+///
+/// @param {Color} $border-color [map-get($af4-colors, primary-light)] - CSS color value
+/// @param {Color} $bg-color [#FFF] - CSS color value
+/// @param {Number} $z-index [2] - z-index value
+@mixin arrow (
+	$border-color: map-get($af4-colors, primary-light),
+	$bg-color: $whiter,
+	$z-index: 2
+) {
+	@include arrow-base($z-index);
+	@include arrow-color($border-color, $bg-color);
+}
+
+/// Create brackets on opposite sides of an element
+///
+/// @param {Color} $color [map-get($af4-colors, primary-light)] - CSS color value
+/// @param {Number} $border-width [2px] - Width of the bracket line
+/// @param {Number} $width [10px] - Length of the bracket arms
+/// @param {String} $axis [x] - If "x" the brackets will appear on the left and right;
+///                             if "y" they will appear above and below
+/// @param {Number} $padding [rem-calc(10 20)] - Padding of the element which ensures its contents
+///                                              are far enough away from the brackets
+@mixin brackets (
+	$color: map-get($af4-colors, primary-light),
+	$border-width: 2px,
+	$width: 10px,
+	$axis: x,
+	$padding: rem-calc(10 20)
+) {
+	position: relative;
+	padding: $padding;
+
+	&::before,
+	&::after {
+		flex: 0 0 auto;
+		content: "";
+		display: block;
+		position: absolute;
+		border: {
+			color: $color;
+			style: solid;
+		}
+
+		@if $axis == x {
+			top: 0;
+			height: 100%;
+			width: $width;
+		}
+		@if $axis == y {
+			left: 0;
+			height: $width;
+			width: 100%;
+		}
+	}
+
+	&::before {
+		@if $axis == x {
+			left: 0;
+			border-width: $border-width 0 $border-width $border-width;
+		}
+		@if $axis == y {
+			top: 0;
+			border-width: $border-width $border-width 0 $border-width;
+		}
+	}
+
+	&::after {
+		@if $axis == x {
+			right: 0;
+			border-width: $border-width $border-width $border-width 0;
+		}
+		@if $axis == y {
+			bottom: 0;
+			border-width: 0 $border-width $border-width $border-width;
+		}
+	}
+
+	@include breakpoint(small only) {
+		padding: $width $width * 2;
+	}
+}
+
+@mixin bracket-color ($color: map-get($af4-colors, primary-light)) {
+	&::before,
+	&::after {
+		border-color: $color;
+	}
+}
