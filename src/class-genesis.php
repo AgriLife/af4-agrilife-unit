@@ -58,9 +58,9 @@ class Genesis {
 		// Move right header widget area attached to the AgriFlex\RequiredDOM class.
 		add_filter( 'wp_nav_menu_args', array( $this, 'nav_menu_args' ) );
 		add_filter( 'af4_top_bar_left_attr', array( $this, 'af4_top_bar_left_attr' ) );
-		add_filter( 'af4_header_right_attr', array( $this, 'af4_header_right_attr' ) );
+		add_filter( 'af4_nav_search_attr', array( $this, 'af4_nav_search_attr' ) );
 		remove_filter( 'af4_before_nav', array( $af_required, 'add_search_toggle' ), 11 );
-		remove_action( 'genesis_header', array( $af_required, 'add_header_right_widgets' ), 10 );
+		remove_action( 'genesis_header', array( $af_required, 'add_nav_search_widget_area' ), 10 );
 		add_filter( 'af4_primary_nav_menu', array( $this, 'add_search_widget' ), 9 );
 
 	}
@@ -78,8 +78,8 @@ class Genesis {
 		genesis_seo_site_title();
 		$site_title = ob_get_clean();
 		$new_inside = sprintf( '<a href="%s">%s</a>', trailingslashit( home_url() ), get_bloginfo( 'name' ) );
-		preg_match('/^<[a-z]+[^>]*>/', $site_title, $title_open );
-		preg_match('/<\/[a-z]+>$/', $site_title, $title_close );
+		preg_match( '/^<[a-z]+[^>]*>/', $site_title, $title_open );
+		preg_match( '/<\/[a-z]+>$/', $site_title, $title_close );
 		$site_title = $title_open[0] . $new_inside . $title_close[0];
 
 		ob_start();
@@ -123,8 +123,8 @@ class Genesis {
 			if ( strpos( $image[0], 'class=' ) && preg_match( '/show-for-small(-only)?/', $img_class[1], $vis_class ) ) {
 				// User-uploaded logo for small or all screens.
 				$has_mobile_logo_already = true;
-				$new_image = '<span class="cell shrink alunit-mobile-logo ' . $vis_class[0] . '">' . $new_image . '</span>';
-				$title = str_replace( $image[0], $new_image, $title );
+				$new_image               = '<span class="cell shrink alunit-mobile-logo ' . $vis_class[0] . '">' . $new_image . '</span>';
+				$title                   = str_replace( $image[0], $new_image, $title );
 				continue;
 			} else {
 				if ( false === empty( $img_class ) && false === strpos( $img_class[1], 'hide-for-small-only' ) && false === strpos( $img_class[1], 'show-for-medium' ) ) {
@@ -136,7 +136,7 @@ class Genesis {
 					$new_image = str_replace( '<img', '<img class="hide-for-small-only"', $new_image );
 				} else {
 					$img_class[1] = 'hide-for-small-only';
-					$new_image = str_replace( $img_class[0], 'class="' . $img_class[1] . '"', $new_image );
+					$new_image    = str_replace( $img_class[0], 'class="' . $img_class[1] . '"', $new_image );
 				}
 			}
 			// Replace old image code with new code.
@@ -146,7 +146,7 @@ class Genesis {
 		// Add new logo and title for mobile.
 		$mobile_title = sprintf(
 			'<span class="cell auto site-title-text show-for-small-only">%s</span>',
-			get_bloginfo( 'name ')
+			get_bloginfo( 'name ' )
 		);
 		if ( ! $has_mobile_logo_already ) {
 			$mobile_title = sprintf( '<span class="cell shrink alunit-mobile-logo show-for-small-only"><img src="%simages/AgriLife-A.png"></span>', ALUAF4_DIR_URL ) . $mobile_title;
@@ -217,7 +217,7 @@ class Genesis {
 
 		$search  = '<div class="title-bars cell medium-shrink title-bar-right">';
 		$search .= '<div class="title-bar title-bar-search"><button class="search-icon" type="button" data-toggle="header-search"></button><div class="title-bar-title">Search</div>';
-		$search  = $af_required->add_header_right_widgets( $search );
+		$search  = $af_required->add_nav_search_widget_area( $search );
 		$search  = str_replace( 'id="header-search', 'data-toggler=".hide-for-medium" id="header-search', $search );
 		$search .= '</div></div>';
 
@@ -232,7 +232,7 @@ class Genesis {
 	 * @param array $attributes HTML attributes.
 	 * @return array
 	 */
-	public function af4_header_right_attr( $attributes ) {
+	public function af4_nav_search_attr( $attributes ) {
 		$attributes['class'] = 'header-right-widget-area hide-for-medium';
 		return $attributes;
 	}
