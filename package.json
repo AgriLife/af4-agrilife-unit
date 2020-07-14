@@ -1,6 +1,6 @@
 {
   "name": "af4-agrilife-unit",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "AgriLife variation of the AgriFlex4 theme",
   "main": "af4-agrilife-unit.php",
   "scripts": {
